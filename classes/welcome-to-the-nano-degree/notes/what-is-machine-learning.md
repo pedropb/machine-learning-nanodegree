@@ -43,3 +43,6 @@ For example: suppose we're building a spam detector and we have a data set of 10
 # Gradient Descent
 
 For each step, we evaluate all possible next steps and select the step that will maximize our current position towards our goal.
+
+Example given: descending a mountain.
+
