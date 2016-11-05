@@ -103,3 +103,35 @@ xy = 2 -> green
 ![Kernel Trick Planes](../images/kernel-trick-plane.png "Kernel Trick Planes")
 
 ![Kernel Trick Curves](../images/kernel-trick-curve.png "Kernel Trick Curves")
+
+# Exercise XOR
+
+The exercise is to create a classification system that identifies XOR data points.
+
+|X|Y|XOR|
+|-|-|-|
+|0|0|0|
+|0|1|1|
+|1|0|1|
+|1|1|0|
+
+## Solution:
+
+My solution was to use a NAND, OR and AND combination, implemented by a Neural Network.
+
+|X|Y|NAND|OR|NAND · OR|
+|-|-|-|-|-|
+|0|0|1|0|0|
+|0|1|1|1|1|
+|1|0|1|1|1|
+|1|1|0|1|0|
+
+![Neural Network Graph](http://g.gravizo.com/g?
+  digraph G {
+    aize ="4,4";
+    NAND;
+    OR;
+    NAND -> AND
+    OR -> AND
+  }
+)
