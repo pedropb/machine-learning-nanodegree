@@ -129,9 +129,14 @@ My solution was to use a NAND, OR and AND combination, implemented by a Neural N
 ![Neural Network Graph](http://g.gravizo.com/g?
   digraph G {
     aize ="4,4";
-    NAND;
-    OR;
-    NAND -> AND
-    OR -> AND
+    X;
+    Y;
+    X -> NAND;
+    Y -> NAND;
+    X -> OR;
+    Y -> OR;
+    NAND -> AND;
+    OR -> AND;
+    AND -> Result;
   }
 )
