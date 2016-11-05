@@ -57,3 +57,16 @@ Example: assuming house prices are related to their square footage, estimate a h
 We plot out data to a graph and each data-point. We then draw a line that best sepparate the two sets of points. This is also done using gradient descent. The error function is correlated to the misclassification and the proximity of points to the separation line.
 
 Example: students previous grade and test grade for acceptance at a college. Given the two grades of a sample student and a data-set, we have to plot the sample data onto the graph and check if it is inside the acceptance region or not.
+
+# Support Vector Machine
+
+Given all possible lines that split a data set:
+1. we identify the points close to these lines
+2. then we discard the other points
+3. we calculate the distances of the remaining points to each line
+4. then we evaluate the minimal distances and select the line that has the largest minimal distance
+
+To maximize the minimal distance we use gradient descent.
+
+Example:
+![Example](../images/support-vector-machines.png "Example")
