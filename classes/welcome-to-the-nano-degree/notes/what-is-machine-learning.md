@@ -70,3 +70,36 @@ To maximize the minimal distance we use gradient descent. The name Support Vecto
 
 Example:
 ![Example](../images/support-vector-machines.png "Example")
+
+# Neural Network
+
+In a simple example, the instructor defined a neural network as a combination of multiple evaluations using previous known methods for splitting data set. His example basically consisted of independent nodes that plot their inputs into graphs and check if they are above or below some separating lines.
+
+![Neural Network Questions](../images/neural-network-questions.png "Neural Network Questions")
+
+![Neural Network Topography](../images/neural-network-topography.png "Neural Network Topography")
+
+
+# Kernel Method
+
+This method consists of identifying an auxiliary function that allow us to split the data, based on the auxiliary function. In a 2-D example, we had 4 points `red(0,3) green(1,2) green(2,1) red(3,0)`. From these points it was easy to identify the function f(x,y) = xy. Which then gave us the table:
+
+|x|y|xy|
+|-|-|--|
+|0|3|0|
+|1|2|2|
+|2|1|2|
+|3|0|0|
+
+It is clear from the table that `xy = 1` splits the data in two sets.
+
+We can then represent this data as curves or as planes.
+```
+xy = 0 -> red
+xy = 1 -> frontier
+xy = 2 -> green
+```
+
+![Kernel Trick Planes](../images/kernel-trick-plane.png "Kernel Trick Planes")
+
+![Kernel Trick Curves](../images/kernel-trick-curve.png "Kernel Trick Curves")
