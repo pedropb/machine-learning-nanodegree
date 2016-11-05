@@ -44,5 +44,5 @@ For example: suppose we're building a spam detector and we have a data set of 10
 
 For each step, we evaluate all possible next steps and select the step that will maximize our current position towards our goal.
 
-Example given: descending a mountain.
+Example given: while descending a mountain, we evaluate all next steps to choose the step that will take us closer to the base of the mountain, and so on, until we get to the base of the mountain.
 
