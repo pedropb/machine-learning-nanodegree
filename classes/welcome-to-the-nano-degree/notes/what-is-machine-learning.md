@@ -44,5 +44,11 @@ For example: suppose we're building a spam detector and we have a data set of 10
 
 For each step, we evaluate all possible next steps and select the step that will maximize our current position towards our goal.
 
-Example given: while descending a mountain, we evaluate all next steps to choose the step that will take us closer to the base of the mountain, and so on, until we get to the base of the mountain.
+Example: while descending a mountain, we evaluate all next steps to choose the step that will take us closer to the base of the mountain, and so on, until we get to the base of the mountain.
+
+# Linear Regression
+
+We plot our data into a chart and draw a line that best fits all the points we plotted. The best fit is the line which minimizes the error. In this case, the error is the sum of the distances between the points and the line. To do this, we can use two techniques: Gradient Descent (has to deal with negative distances) and Least Squares (doesn't have to deal with negative distances - *real life usage*).
+
+Example: assuming house prices are related to their square footage, estimate a house price given its square footage and 2 others houses prices, and square footage.
 
