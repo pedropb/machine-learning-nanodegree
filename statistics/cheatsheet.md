@@ -71,5 +71,14 @@ and the _population_ standard deviation is equal to the square root of the var
 
 ---
 
+# Normal Distribution
+
+## Probability Density
+
+![Probability Density of a Normal Distribution](https://wikimedia.org/api/rest_v1/media/math/render/svg/6404a4c69c536278a5933085f0d5f4a9ca9f2b2a "Probability Density of a Normal Distribution")
+
+
+---
+
 
 **Reference:** [Wikipedia](https://en.wikipedia.org/wiki/Statistical_dispersion)
