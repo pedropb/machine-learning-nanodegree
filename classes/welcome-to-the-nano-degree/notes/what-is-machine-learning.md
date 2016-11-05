@@ -52,3 +52,8 @@ We plot our data into a chart and draw a line that best fits all the points we p
 
 Example: assuming house prices are related to their square footage, estimate a house price given its square footage and 2 others houses prices, and square footage.
 
+# Logistic Regression
+
+We plot out data to a graph and each data-point. We then draw a line that best sepparate the two sets of points. This is also done using gradient descent. The error function is correlated to the misclassification and the proximity of points to the separation line.
+
+Example: students previous grade and test grade for acceptance at a college. Given the two grades of a sample student and a data-set, we have to plot the sample data onto the graph and check if it is inside the acceptance region or not.
