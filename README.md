@@ -1,0 +1,1 @@
+This repo will store all my class notes and exercises for Udacity's Nanodegree in Machine Learning.
