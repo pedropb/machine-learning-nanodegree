@@ -8,6 +8,8 @@ What is machine learning?
 
 Decision trees are a series of questions you ask at one's data to come to a decision. In the example, we built the questions about the features that had a nice split over the data. The data is below, and so is the compiled decision tree.
 
+## Data
+
 | Gender | Age | App Downloaded|
 |--------|-----|---------------|
 | F | 15 | Pokemon Go |
@@ -16,6 +18,8 @@ Decision trees are a series of questions you ask at one's data to come to a deci
 | M | 32 | Snapchat |
 | F | 40 | WhatsApp |
 | M | 14 | Pokemon Go |
+
+## Decision tree
 
 ![Alt text](http://g.gravizo.com/g?
   digraph G {
