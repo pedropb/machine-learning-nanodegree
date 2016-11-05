@@ -20,10 +20,10 @@ Decision trees are a series of questions you ask at one's data to come to a deci
 ![Alt text](http://g.gravizo.com/g?
   digraph G {
     aize ="4,4";
-    Ask age;
-    Ask age -> suggest Pokemon Go [label="<20"];
-    Ask age -> Ask gender [label=">=20"];
-    Ask gender -> suggest WhatsApp [label="F"];
-    Ask gender -> suggest Snapchat [label="M"];
+    "Ask age";
+    "Ask age" -> "suggest Pokemon Go" [label="<20"];
+    "Ask age" -> "Ask gender" [label=">=20"];
+    "Ask gender" -> "suggest WhatsApp" [label="F"];
+    "Ask gender" -> "suggest Snapchat" [label="M"];
   }
 )
