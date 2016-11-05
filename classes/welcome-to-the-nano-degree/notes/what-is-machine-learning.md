@@ -39,3 +39,7 @@ Naive Bayes classifier is probabilistic classifier that assumes that features ob
 For example: suppose we're building a spam detector and we have a data set of 100 e-mails, 25 flagged as spam and 75 not spam. The word `cheap` appears in 20 out of the 25 spam emails, and only in 5 out of the 75 non-spam e-mails. From this, we can conclude that there is a 80% chance of an e-mail being spam if it contains the word `cheap`.
 
 **Remark:** If the number of features tend to infinity, the Naive Bayes classifier will converge to 0, because the probability of features will always be < 1. Also, if a feature probability happens to be 0, it will wipe out all information being calculated.
+
+# Gradient Descent
+
+For each step, we evaluate all possible next steps and select the step that will maximize our current position towards our goal.
