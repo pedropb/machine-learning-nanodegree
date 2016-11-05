@@ -66,7 +66,7 @@ Given all possible lines that split a data set:
 3. we calculate the distances of the remaining points to each line
 4. then we evaluate the minimal distances and select the line that has the largest minimal distance
 
-To maximize the minimal distance we use gradient descent.
+To maximize the minimal distance we use gradient descent. The name Support Vector Machine is because the points close to the lines are called the "support".
 
 Example:
 ![Example](../images/support-vector-machines.png "Example")
