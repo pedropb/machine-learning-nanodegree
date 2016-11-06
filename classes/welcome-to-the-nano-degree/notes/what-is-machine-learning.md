@@ -140,3 +140,15 @@ My solution was to use a NAND, OR and AND combination, implemented by a Neural N
     AND -> Result;
   }
 )
+
+# Lab classification
+
+This is a jupyter notebook with a series of python data visualization with sliders to adjust parameters of the various methods we have learned.
+
+## Best fit slider values 
+- SVM: `6`
+- RBF: `100`
+- NN: `44`
+- DT: `9``
+
+
