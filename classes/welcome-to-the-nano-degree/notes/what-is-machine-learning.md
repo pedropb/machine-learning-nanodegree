@@ -108,23 +108,23 @@ xy = 2 -> green
 
 The exercise is to create a classification system that identifies XOR data points.
 
-|X|Y|XOR|
-|---|---|---|
-|0|0|0|
-|0|1|1|
-|1|0|1|
-|1|1|0|
+|X|Y|XOR|color|
+|---|---|---|---|
+|0|0|0|red|
+|0|1|1|green|
+|1|0|1|green|
+|1|1|0|red|
 
 ## Solution:
 
 My solution was to use a NAND, OR and AND combination, implemented by a Neural Network.
 
-|X|Y|NAND|OR|NAND · OR|
-|---|---|---|---|---|
-|0|0|1|0|0|
-|0|1|1|1|1|
-|1|0|1|1|1|
-|1|1|0|1|0|
+|X|Y|NAND|OR|NAND · OR|Output|
+|---|---|---|---|---|---|
+|0|0|1|0|0|red|
+|0|1|1|1|1|green|
+|1|0|1|1|1|green|
+|1|1|0|1|0|red|
 
 ![Neural Network Graph](http://g.gravizo.com/g?
   digraph G {
