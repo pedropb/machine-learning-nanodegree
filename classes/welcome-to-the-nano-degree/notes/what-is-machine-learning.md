@@ -84,7 +84,7 @@ In a simple example, the instructor defined a neural network as a combination of
 This method consists of identifying an auxiliary function that allow us to split the data, based on the auxiliary function. In a 2-D example, we had 4 points `red(0,3) green(1,2) green(2,1) red(3,0)`. From these points it was easy to identify the function f(x,y) = xy. Which then gave us the table:
 
 |x|y|xy|
-|-|-|--|
+|---|---|---|
 |0|3|0|
 |1|2|2|
 |2|1|2|
@@ -108,7 +108,7 @@ xy = 2 -> green
 The exercise is to create a classification system that identifies XOR data points.
 
 |X|Y|XOR|
-|-|-|-|
+|---|---|---|
 |0|0|0|
 |0|1|1|
 |1|0|1|
