@@ -1,1 +1,1 @@
-This repo will store all my class notes and exercises for Udacity's Nanodegree in Machine Learning.
+This repo will store all my class notes and exercises for Udacity's Nanodegree in Machine Learning starting at November 5th 2016.
