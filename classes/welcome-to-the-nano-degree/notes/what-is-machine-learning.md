@@ -155,7 +155,7 @@ This is a jupyter notebook with a series of python data visualization with slide
 
 This algorithm consists of:
 
-1. Given N Clusters and a set of data points.
+1. Given N Clusters:
 2. Plot N random control points into the data set.
 3. Mark all the points according to their distance of the control points.
 4. Move the control points to the center of their marked points.
@@ -164,5 +164,15 @@ This algorithm consists of:
 **Question:** What can we do, if we don't know the number of clusters?
 
 The obvious answer is: we have to find out how many clusters we need. The number of clusters can vary from 1 to N where N is the size of the data set. We could iterate from 1 to N, and evaluate how many nodes are being captured by each control point. We want to minimize the number of control points while also minimizing the variance of the distance from the data points to the control points. For this, we could [The Elbow Method](https://en.wikipedia.org/wiki/Determining_the_number_of_clusters_in_a_data_set#The_Elbow_Method) which identifies the number of clusters by evaluating the marginal gain in  explained variance for every control point added. Once this marginal gain drops, we'll know the desired number of clusters.
+
+# Hierarchical clustering
+
+This algorithm consists of:
+
+1. Given the max distance between 2 points:
+2. Select the 2 points that are closest to each other
+3. If they are above the max distance, stop.
+4. Else, group them in a cluster
+5. Repeat 2 to 5.
 
 
