@@ -23,7 +23,6 @@ Decision trees are a series of questions you ask at one's data to come to a deci
 
 ![Decision Tree](http://g.gravizo.com/g?
   digraph G {
-    aize ="4,4";
     "Ask age";
     "Ask age" -> "suggest Pokemon Go" [label="<20"];
     "Ask age" -> "Ask gender" [label=">=20"];
@@ -120,7 +119,7 @@ The exercise is to create a classification system that identifies XOR data point
 My solution was to use a NAND, OR and AND combination, implemented by a Neural Network.
 
 |X|Y|NAND|OR|NAND · OR|
-|-|-|-|-|-|
+|---|---|---|---|---|
 |0|0|1|0|0|
 |0|1|1|1|1|
 |1|0|1|1|1|
@@ -128,7 +127,7 @@ My solution was to use a NAND, OR and AND combination, implemented by a Neural N
 
 ![Neural Network Graph](http://g.gravizo.com/g?
   digraph G {
-    aize ="4,4";
+    rankdir="LR";
     X;
     Y;
     X -> NAND;
