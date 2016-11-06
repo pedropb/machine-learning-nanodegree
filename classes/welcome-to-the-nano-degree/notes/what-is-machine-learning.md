@@ -68,6 +68,7 @@ Given all possible lines that split a data set:
 To maximize the minimal distance we use gradient descent. The name Support Vector Machine is because the points close to the lines are called the "support".
 
 Example:
+
 ![Example](../images/support-vector-machines.png "Example")
 
 # Neural Network
