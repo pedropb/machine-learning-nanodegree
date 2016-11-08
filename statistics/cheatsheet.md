@@ -84,5 +84,13 @@ and the _population_ standard deviation is equal to the square root of the var
 
 ---
 
+# Bessels Correction
+
+## Sample standard deviation
+
+![Bessels Correction](bessels_correction.png)
+
+This is used to approximate standard deviation of the population, from a standar deviation of a sample.
+
 
 **Reference:** [Wikipedia](https://en.wikipedia.org/wiki/Statistical_dispersion)
