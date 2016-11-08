@@ -40,6 +40,10 @@ The variance of a random variable `X` is the [expected value](https://en.wiki
 
     Var(X) = E[(X - μ)²]
 
+Usually the expected value for most distributions is the arithmetic mean:
+
+![Variance with arithmetic mean](http://latex.codecogs.com/gif.latex?Var(X)%3D%5Csum%7B(x_i-%5cbar%7bx%7d)^2%7D)
+
 ## Standard Deviation
 
 Standard deviation is the square root of the variance.
