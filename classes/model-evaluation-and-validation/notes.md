@@ -49,3 +49,9 @@ We can observe that:
 
 For continuous data, we need to care how close the prediction is. For this, we can use **Mean Absolute Error**, which is the sum of the absolute deviations from the corresponding data points divided by the number of data points.
 
+## Mean Squared Error
+
+Mean squared is the most common metric to measure model performance. In contrast with absolute error, the residual error (the difference between predicted and the true value) is squared.
+
+Some benefits of squaring the residual error is that error terms are positive, it emphasizes larger errors over smaller errors, and is differentiable. Being differentiable allows us to use calculus to find minimum or maximum values, often resulting in being more computationally efficient.
+
