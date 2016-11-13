@@ -22,3 +22,7 @@ We can typically reduce the variability of a model's predictions and increase pr
 ## Overfitting vs Underfitting
 
 ![](http://scikit-learn.org/stable/_images/sphx_glr_plot_underfitting_overfitting_0011.png)
+
+## Curse of Dimensionality
+
+As the number of features or dimensions grows, the amount of data we need to generalize accurately grows exponentially.
