@@ -64,3 +64,18 @@ Mean squared is the most common metric to measure model performance. In contrast
 Some benefits of squaring the residual error is that error terms are positive, it emphasizes larger errors over smaller errors, and is differentiable. Being differentiable allows us to use calculus to find minimum or maximum values, often resulting in being more computationally efficient.
 
 [Scikit reference](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_squared_error.html#sklearn.metrics.mean_squared_error)
+
+
+## Regressing Score Functions
+
+## R2 Score
+
+Computes the coefficient of determination of predictions for true values. This is the default scoring method for regression learners in scikit-learn
+
+[Scikit reference](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.r2_score.html#sklearn.metrics.r2_score)
+
+## Explained variance score
+
+Measures the proportion to which a mathematical model accounts for the variation (dispersion) of a given data set.
+
+[Scikit reference](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.explained_variance_score.html#sklearn.metrics.explained_variance_score)
