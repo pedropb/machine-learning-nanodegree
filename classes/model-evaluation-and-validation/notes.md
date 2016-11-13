@@ -37,17 +37,25 @@ We can observe that:
 
 **Recall** is the fraction given by: `True Positives / (True Positives + False Negatives)`
 
+[Scikit reference](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.recall_score.html)
+
 ## Precision
 
-**Precision** is the fraction given by: `True Positives / (True Positives + False Positives)`  
+**Precision** is the fraction given by: `True Positives / (True Positives + False Positives)`
+
+[Scikit reference](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.precision_score.html)
 
 ## F1 Score
 
 **F1 score** is the weighted average between precision and recall: `F1 = 2 * (precision * recall) / (precision + recall)`
 
+[Scikit reference](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html#sklearn.metrics.f1_score)
+
 ## Mean Absolute Error
 
 For continuous data, we need to care how close the prediction is. For this, we can use **Mean Absolute Error**, which is the sum of the absolute deviations from the corresponding data points divided by the number of data points.
+
+[Scikit reference](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_absolute_error.html#sklearn.metrics.mean_absolute_error)
 
 ## Mean Squared Error
 
@@ -55,3 +63,4 @@ Mean squared is the most common metric to measure model performance. In contrast
 
 Some benefits of squaring the residual error is that error terms are positive, it emphasizes larger errors over smaller errors, and is differentiable. Being differentiable allows us to use calculus to find minimum or maximum values, often resulting in being more computationally efficient.
 
+[Scikit reference](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_squared_error.html#sklearn.metrics.mean_squared_error)
