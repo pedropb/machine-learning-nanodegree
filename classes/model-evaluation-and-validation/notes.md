@@ -45,3 +45,7 @@ We can observe that:
 
 **F1 score** is the weighted average between precision and recall: `F1 = 2 * (precision * recall) / (precision + recall)`
 
+## Mean Absolute Error
+
+For continuous data, we need to care how close the prediction is. For this, we can use **Mean Absolute Error**, which is the sum of the absolute deviations from the corresponding data points divided by the number of data points.
+
