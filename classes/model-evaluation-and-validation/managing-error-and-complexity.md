@@ -19,3 +19,6 @@ Some variance is normal, but too much variance indicates that the model is unabl
 
 We can typically reduce the variability of a model's predictions and increase precision by training on more data. If more data is unavailable, we can also control variance by limiting our model's complexity.
 
+## Overfitting vs Underfitting
+
+![](http://scikit-learn.org/stable/_images/sphx_glr_plot_underfitting_overfitting_0011.png)
