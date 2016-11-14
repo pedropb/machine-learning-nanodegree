@@ -26,3 +26,11 @@ We can typically reduce the variability of a model's predictions and increase pr
 ## Curse of Dimensionality
 
 As the number of features or dimensions grows, the amount of data we need to generalize accurately grows exponentially.
+
+## Learning Curves - Identifying Bias and Variance
+
+### Bias
+When the training and testing errors converge and are quite high this usually means the model is biased. No matter how much data we feed it, the model cannot represent the underlying relationship and therefore has systematic high errors.
+
+### Variance
+When there is a large gap between the training and testing error this generally means the model suffers from high variance. Unlike a biased model, models that suffer from variance generally require more data to improve. We can also limit variance by simplifying the model to represent only the most important features of the data.
