@@ -24,9 +24,21 @@ Regression is the task of predicting a continuous output for a given input. For 
 
 ## Types of Regression
 
+### Parametric vs Non-parametric Regression
+
+A **parametric regression** captures all information about the provided data into their own parameters, and then uses these parameters to predict the outputs for a given input.
+
+A **non-parametric regression** uses the data directly to predict the output for a given input.
+
+Parametric regressions take longer to train but less time to give predictions, while non-parametric regressions can be trained faster but require more time to provide the predictions. Also, it is easier to add new data points to a non-parametric regression, since it doesn't need to be trained all over again.
+
+An example of a parametric regression is a **polynomial regression**.
+
+An example of a non-parametric regression is a **kernel regression**.
+
 ### Linear Regression
 
-Linear regression is when we fit the data to a line. The technique goes as following
+Linear regression is a parametric regression that fits the data to a line. The parameters of the line are found by the following steps:
 
 1. The line is represented by `y = mx + b`. We have to find `m` and `b`, given two sets X and Y.
 2. First we compute the mean of X and Y.
@@ -86,8 +98,41 @@ r_squared = 1 - (SSres / SStot)
 
 ### Polynomial Regression
 
+Polynomial regression is a parametric regression which given a data set and a `n` degree, it will calculate the values for the `a` parameters that best fit the data set:
+
+![polynomial regression](https://wikimedia.org/api/rest_v1/media/math/render/svg/5dc55ae387a97beec17a821a014dd101d329004d)
+
+```python
+# using numpy
+
+import numpy as np
+
+X = [5,6,7,8,10,12,16]
+Y = [65,51,75,75,86,80,0]
+degrees = 2
+
+coeffs = np.polyfit(X, Y, degrees)
+# in this case, we have a parabola
 
 
+# using sklearn
+from sklearn.preprocessing import PolynomialFeatures
+
+poly = PolynomialFeatures(degrees)
+poly.fit(X, Y)
+poly.powers_
+```
+
+### K-nearest neighbor (KNN)
+
+KNN is a non-parametric regression, which given an input, it finds the K nearest data points that neighbors that input hyperplane and average their Y, in order to compute the output. 
+
+![KNN](KNN.png)
+
+
+### Kernel Regression
+
+Kernel regression is similar to KNN, but instead uses a weighted average based on the distance to the hyperplane to calculate the output. This differs from KNN, because the latter equally weighs all data points selected.
 
 ### Visualizing Regression
 
