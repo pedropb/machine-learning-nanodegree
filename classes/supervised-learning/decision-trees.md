@@ -19,4 +19,6 @@ Decision Trees algorithms are as following:
 3. Follow the answer path
 4. Go to 1, until the answer is found.
 
- 
+## ID3
+
+![ID3 Algorithm](ID3.png) 
