@@ -9,3 +9,14 @@
 - **Sample** (aka training set) is a set of all the inputs paired with their expected output that will be used to improve the concept.
 - **Candidate** is a concept that might be the target concept
 - **Testing Set** is a set of all inputs paired with their expected output that will be used to validate the candidate.
+
+## Decision Trees: Learning
+
+Decision Trees algorithms are as following:
+
+1. Pick the attribute that splits the data the best.
+2. Ask the question about the attribute.
+3. Follow the answer path
+4. Go to 1, until the answer is found.
+
+ 
