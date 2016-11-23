@@ -14,3 +14,7 @@ clf = clf.fit(features_train, labels_train)
 from sklearn.metrics import accuracy_score
 acc = accuracy_score(labels_test, clf.predict(features_test)) 
 ```
+
+## Entropy
+
+![Entropy](Entropy.png)
