@@ -29,3 +29,7 @@ So the entropy could be calculated like:
 import math
 entropy = 2*( (-0.5) * math.log(0.5, 2)) # resulting in 1
 ```
+
+## Information Gain
+
+![Information Gain](information-gain.png)
