@@ -33,3 +33,12 @@ entropy = 2*( (-0.5) * math.log(0.5, 2)) # resulting in 1
 ## Information Gain
 
 ![Information Gain](information-gain.png)
+
+## sklearn.tree DecisionTreeClassifier default criterion
+
+Scikit learn uses Gini impurity as default criterion for creating Decision Trees Classifiers. To use the Entropy criterion instead, one should do the following:
+
+```python
+from sklearn.tree import DecisionTreeClassifier
+clf = DecisionTreeClassifier(criterion='entropy')
+```
