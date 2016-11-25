@@ -2,7 +2,7 @@
 
 ## Decision tree graph representation
 
-![Graph representation](DT-Graph.png)
+![Graph representation](images/DT-Graph.png)
 
 ## Decision Trees Accuracy
 
@@ -17,7 +17,7 @@ acc = accuracy_score(labels_test, clf.predict(features_test))
 
 ## Entropy
 
-![Entropy](Entropy.png)
+![Entropy](images/Entropy.png)
 
 ### Calculating Entropy Example
 
@@ -32,7 +32,7 @@ entropy = 2*( (-0.5) * math.log(0.5, 2)) # resulting in 1
 
 ## Information Gain
 
-![Information Gain](information-gain.png)
+![Information Gain](images/information-gain.png)
 
 ## sklearn.tree DecisionTreeClassifier default criterion
 

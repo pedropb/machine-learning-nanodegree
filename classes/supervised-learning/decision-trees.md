@@ -23,7 +23,7 @@ Decision Trees algorithms are as following:
 
 A top down learning algorithm.
 
-![ID3 Algorithm](ID3.png)
+![ID3 Algorithm](images/ID3.png)
 
 ### Bias of ID3 
 

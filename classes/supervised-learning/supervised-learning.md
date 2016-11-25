@@ -127,7 +127,7 @@ poly.powers_
 
 KNN is a non-parametric regression, which given an input, it finds the K nearest data points that neighbors that input hyperplane and average their Y, in order to compute the output. 
 
-![KNN](KNN.png)
+![KNN](images/KNN.png)
 
 
 ### Kernel Regression
