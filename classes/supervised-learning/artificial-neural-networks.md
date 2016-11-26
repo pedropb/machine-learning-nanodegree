@@ -42,7 +42,36 @@ These perceptrons can be defined by the W and Θ values. Also note that there ar
 | 0  | 1  | 1  | 1  | 2 | 1     | 1 | 1   |
 | 1  | 1  | 1  | 1  | 2 | 2     | 0 | 0   |
 
+## Perceptron Training Rule
 
+![Perceptron Training](images/perceptron-training.png)
 
+## Gradient Descent Rule
 
-TODO: add drawings for AND, OR, NOT and XOR Perceptrons with weights and theta.
+![Gradient Descent](images/gradient-descent.png)
+
+## Comparison of Learning Rules
+
+![Comparison](images/comparison-of-learning-rules.png)
+
+## Sigmoid
+
+![Sigmoid](images/sigmoid.png)
+
+## Neural Network Sketch / Backpropagation
+
+![Backpropagation](images/backpropagation.png)
+
+## Optimizing Weights
+
+![Optimizing Weights](images/optimizing-weights.png)
+
+## Restriction Bias
+
+![Restriction Bias](images/restriction-bias.png)
+
+## Preference Bias
+![Preference Bias](images/preference-bias.png)
+
+## Summary
+![Summary](images/summary.png)
