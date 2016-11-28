@@ -20,6 +20,10 @@
 
 ![Kernel Trick Overview](images/kernel-trick-overview.png)
 
+## SKLearn Parameters for SVM
+
+![SVM Parameters](images/svm-parameters.png)
+
 ## Summary
 
 ![Summary](images/summary-svm.png)
