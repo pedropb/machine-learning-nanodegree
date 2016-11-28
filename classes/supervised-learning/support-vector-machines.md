@@ -20,4 +20,4 @@
 
 ## Summary
 
-![Summary](images/summary.png)
+![Summary](images/summary-svm.png)
