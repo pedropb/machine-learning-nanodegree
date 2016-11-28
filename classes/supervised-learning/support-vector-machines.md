@@ -18,6 +18,8 @@
 
 ![Kernel Trick2](images/kernel-trick-svm-2.png)
 
+![Kernel Trick Overview](images/kernel-trick-overview.png)
+
 ## Summary
 
 ![Summary](images/summary-svm.png)
