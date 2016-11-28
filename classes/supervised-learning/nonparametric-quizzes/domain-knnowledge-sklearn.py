@@ -26,3 +26,19 @@ print "man3: ", man3.predict([[4,2]])
 print "man3_neighbors: ", man3.kneighbors([[4,2]], return_distance=False)
 
 # These outputs are not the expected answer to the quiz.
+
+import matplotlib.pyplot as plt
+
+x, y = zip(*X_train)
+
+plt.scatter(x, y)
+plt.scatter(4, 2, color="red")
+for label, xi, yi in zip(y_train, x, y):
+    plt.annotate(
+        label,
+        xy = (xi, yi),
+        xytext = (-20, 20),
+        textcoords = 'offset points', ha = 'right', va = 'bottom',
+        bbox = dict(boxstyle = 'round,pad=0.5', fc = 'yellow', alpha = 0.5),
+        arrowprops = dict(arrowstyle = '->', connectionstyle = 'arc3,rad=0'))
+plt.show()
