@@ -21,3 +21,8 @@
 ## Bayesian Learning Summary
 
 ![Bayesian Learning Summary](images/bayesian-learning-summary.png)
+
+## Inference Rules
+
+![Inference Rules](images/inference-rules.png)
+
