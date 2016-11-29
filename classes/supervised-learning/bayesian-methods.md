@@ -13,3 +13,7 @@
 # Bayesian Learning
 
 ![Bayesian Learning](images/bayesian-learning.png)
+
+## Minimum Description Length
+
+![Minimum Description Length](images/minimum-description-length.png)
