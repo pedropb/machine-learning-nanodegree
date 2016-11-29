@@ -18,6 +18,10 @@
 
 ![Minimum Description Length](images/minimum-description-length.png)
 
+## Recovering Joint Distribution
+
+![Recovering Joint Distribution](images/joint-distribution.png)
+
 ## Bayesian Learning Summary
 
 ![Bayesian Learning Summary](images/bayesian-learning-summary.png)
