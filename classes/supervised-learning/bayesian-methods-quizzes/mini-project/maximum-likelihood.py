@@ -17,9 +17,13 @@ Hello Peter, whats happening? Ummm, I'm gonna need you to go ahead and come in t
 #   
 #   Just use .split() to split the sample_memo text into words separated by spaces.
 from collections import defaultdict
+import re
 
 def NextWordProbability(sampletext,word):
-    words = sampletext.split(' ')
+    text = str.lower(sampletext)
+    text = re.sub(r"[^a-z '-]", "", text)
+
+    words = text.split(' ')
 
     result = defaultdict(int)
     for idx, val in enumerate(words):
