@@ -9,3 +9,7 @@
 ## Bayes Rule
 
 ![Bayes Rule](images/bayes-rule.png)
+
+# Bayesian Learning
+
+![Bayesian Learning](images/bayesian-learning.png)
