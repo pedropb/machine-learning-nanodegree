@@ -6,5 +6,5 @@
 | F | F | .30 |
 
 **Question**:
-1. P(¬storm)? .35
-2. P(lightning | storm)? .25 / .65 = .3846
+1. P(¬storm)? .30 + .05 = .35
+2. P(lightning | storm)? .25 / (.40 + .25) = .3846
