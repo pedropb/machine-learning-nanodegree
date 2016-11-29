@@ -30,3 +30,6 @@
 
 ![Inference Rules](images/inference-rules.png)
 
+## Naive Bayes: Generalization
+
+![Naive Bayes Generalization](images/naive-bayes-generalization.png)
