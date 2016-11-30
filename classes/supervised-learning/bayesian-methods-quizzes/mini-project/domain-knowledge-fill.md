@@ -1,0 +1,1 @@
+![](images/domain-knowledge-fill.png)
