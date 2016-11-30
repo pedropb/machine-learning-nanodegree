@@ -13,7 +13,7 @@
 
 import operator
 import collections
-import re
+# import re
 
 sample_memo = '''
 Milt, we're gonna need to go ahead and move you downstairs into storage B. We have some new people coming in, and we need all the space we can get. So if you could just go ahead and pack up your stuff and move it down there, that would be terrific, OK?
@@ -45,7 +45,7 @@ def LaterWords(sample,word,distance):
     words = text.split(' ')
     word_count = len(words)
 
-    # TODO: Given a word, collect the relative probabilities of possible following words
+    # Given a word, collect the relative probabilities of possible following words
     # from @sample. You may want to import your code from the maximum likelihood exercise.
 
     def NextWordProbability(w):
@@ -57,7 +57,7 @@ def LaterWords(sample,word,distance):
         
         return result
 
-    # TODO: Repeat the above process--for each distance beyond 1, evaluate the words that
+    # Repeat the above process--for each distance beyond 1, evaluate the words that
     # might come after each word, and combine them weighting by relative probability
     # into an estimate of what might appear next.
 
