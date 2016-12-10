@@ -65,3 +65,7 @@ class sklearn.cluster.KMeans(n_clusters=8, init='k-means++', n_init=10, max_iter
 ### Expectation Maximization Properties
 
 ![Expectation Maximization Properties](images/em-properties.png)
+
+## Clustering Properties
+
+![Clustering Properties](images/clustering-properties.png)
