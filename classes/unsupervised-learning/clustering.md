@@ -69,3 +69,11 @@ class sklearn.cluster.KMeans(n_clusters=8, init='k-means++', n_init=10, max_iter
 ## Clustering Properties
 
 ![Clustering Properties](images/clustering-properties.png)
+
+## Impossibility Theorem
+
+![Impossibility Theorem](images/impossibility-theorem.png)
+
+## Summary
+
+![Summary](images/clustering-summary.png)
