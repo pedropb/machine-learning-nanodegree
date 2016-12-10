@@ -38,3 +38,6 @@ class sklearn.cluster.KMeans(n_clusters=8, init='k-means++', n_init=10, max_iter
 - `max_iter`: number of iterations (associate points, move centroids, repeat) to be run.
 - `n_init`: number of times the algorithm will run before outputing the results.
 
+## K-means references
+- [Sci-kit learn documentation](http://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html)
+- [Visualizing K-means](https://www.naftaliharris.com/blog/visualizing-k-means-clustering/)
