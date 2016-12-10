@@ -50,3 +50,18 @@ class sklearn.cluster.KMeans(n_clusters=8, init='k-means++', n_init=10, max_iter
 ### Single Linkage Clustering Algorithm
 
 ![Single Linkage Clustering](images/slc.png)
+
+## Soft Clustering
+
+![soft clustering](images/soft-clustering.png)
+
+- Can assign the same point to multiple clusters
+- Probabilistic approach
+
+### Expectation Maximization
+
+![Expectation Maximization formula](images/expectation-maximization.png)
+
+### Expectation Maximization Properties
+
+![Expectation Maximization Properties](images/em-properties.png)
