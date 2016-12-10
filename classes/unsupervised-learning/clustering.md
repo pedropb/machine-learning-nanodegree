@@ -1,6 +1,8 @@
 # Clustering
 
-## K-Means Algorithm
+## K-Means
+
+### K-Means Algorithm
 
 1. Add `K` centroids to the data at random positions.
 
@@ -16,7 +18,7 @@
 
 4. Repeat step 2 and 3 `n` times, or until some other stop-condition has been met.
 
-## K-Means is not deterministic
+### K-Means is not deterministic
 
 The initial position of the centroids will influence the final outcome of the algorithm. See the example below:
 
@@ -26,7 +28,7 @@ The initial position of the centroids will influence the final outcome of the al
 
 To solve this problem, we run the algorithm multiple times and average the results.
 
-## K-Means and sklearn
+### K-Means and sklearn
 
 ```python
 class sklearn.cluster.KMeans(n_clusters=8, init='k-means++', n_init=10, max_iter=300, 
@@ -38,6 +40,13 @@ class sklearn.cluster.KMeans(n_clusters=8, init='k-means++', n_init=10, max_iter
 - `max_iter`: number of iterations (associate points, move centroids, repeat) to be run.
 - `n_init`: number of times the algorithm will run before outputing the results.
 
-## K-means references
+### K-means references
 - [Sci-kit learn documentation](http://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html)
 - [Visualizing K-means](https://www.naftaliharris.com/blog/visualizing-k-means-clustering/)
+
+
+## Single Linkage Clustering
+
+### Single Linkage Clustering Algorithm
+
+![Single Linkage Clustering](images/slc.png)
