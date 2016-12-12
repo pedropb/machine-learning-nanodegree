@@ -66,7 +66,10 @@ To select all *M* relevant features from *N*, without knowing *M*, we need to tr
 
 ![Filtering and Wrapping Overview](images/filtering-wrapping.png)
 
+### Filtering and Wrapping Comparison
+
+![Filtering and Wrapping Comparison](images/filtering-wrapping-comparison.png)
+
 - `Filtering` is a straightforward process where the search algorithm and the learner don't interact.
 - In contrast, in `wrapping` the learner gives feedback to the search algorithm about which features are impacting the learning process. Because of this, it is slower than filtering.
-
-   
+- As an example, one could use a Decision Tree as a search algorithm for filtering. This DT would be trained until overfitting, thus maximizing information gain. Then we extract the selected features from the DT branches and input them into another learner, for example: KNN. In this setup, KNN's major setback, which is needing too much train data to fit the model to all features available, would be dealt with by the selection of features from the DT.
