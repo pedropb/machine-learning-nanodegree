@@ -82,3 +82,17 @@ To select all *M* relevant features from *N*, without knowing *M*, we need to tr
     - randomized optimization
     - forward sequential selection
     - backward elimination
+
+### Feature Relevance
+
+![Feature Relevance](images/relevance.png)
+
+1. A feature x<sub>i</sub> is *strongly relevant* if removing it degrades the Bayes Optimal Classifier (BOC)
+2. A feature x<sub>i</sub> is *weakly relevant* if:
+    - it is not *strongly relevant*
+    - exists a subset of features S that by adding x<sub>i</sub> to S, improves BOC
+3. otherwise the feature x<sub>i</sub> is irrelevant
+
+- In the `AND quiz-example`, the teacher shows that the features `a` and `b`are *strongly relevant*, since the function is `a AND b` and we need both to correctly predict the result.
+- By adding another feature `e` equal to `not a`, we make both `a` and `e` *weakly relevant*, because without one of them, we can still use the other to predict the result of `a AND b` (or `NOT e AND b`).
+- The other features `c` and `d` are *irrelevant*, but not *useless* as we'll see next. 
