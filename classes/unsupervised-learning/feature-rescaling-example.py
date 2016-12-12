@@ -7,7 +7,6 @@ chris_data = [[140., 6.1]]
 def plot_data():
     for d in data:
         plt.scatter(d[0], d[1], color="red")
-        print d[0], d[1]
 
     plt.scatter(chris_data[0][0], chris_data[0][1], color="blue")
 
