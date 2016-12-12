@@ -83,6 +83,14 @@ To select all *M* relevant features from *N*, without knowing *M*, we need to tr
     - forward sequential selection
     - backward elimination
 
+### Minimum Features Quiz
+
+![Minimum Features Quiz](images/minimum-features-quiz.png)
+
+- The quiz asks the student to select the minimum features needed to minimize erros to (1) a Decision Tree, (2) an origin limited perceptron.
+- The solution involves testing the features using some filtering or wrapping algorithm, in trial-and-error fashion.
+- My solution was based on the insight that the predicted function is `a AND b`. Because of that is easy to note what features are necessary to minimize the error for both learners. 
+
 ### Feature Relevance
 
 ![Feature Relevance](images/relevance.png)
