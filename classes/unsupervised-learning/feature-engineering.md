@@ -104,3 +104,10 @@ To select all *M* relevant features from *N*, without knowing *M*, we need to tr
 - In the `AND quiz-example`, the teacher shows that the features `a` and `b`are *strongly relevant*, since the function is `a AND b` and we need both to correctly predict the result.
 - By adding another feature `e` equal to `not a`, we make both `a` and `e` *weakly relevant*, because without one of them, we can still use the other to predict the result of `a AND b` (or `NOT e AND b`).
 - The other features `c` and `d` are *irrelevant*, but not *useless* as we'll see next. 
+
+### Feature Relevance vs Usefulness
+
+![Feature Relevance](images/relevance-vs-usefulness.png)
+
+- A feature is relevant if it affects the result of the BOC.
+- A feature is useful for a model/predictor, if it affects the result of that model/predictor
