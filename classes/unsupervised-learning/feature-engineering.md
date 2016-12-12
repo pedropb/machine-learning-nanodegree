@@ -4,7 +4,7 @@
 
 ![Feature Scaling Formula](images/feature-scaling.png)
 
-## Min Max Rescaler Coding Quiz
+### Min Max Rescaler Coding Quiz
 
 ```python
 """ quiz materials for feature scaling clustering """
@@ -30,11 +30,11 @@ print featureScaling(data)
 
 ```
 
-## Min Max Rescaler in sklearn
+### Min Max Rescaler in sklearn
 
 ![Min Max Rescaler in sklearn](images/min-max-rescaler-sklearn.png)
 
-## Quiz: Algorithms affected by feature rescaling
+### Quiz: Algorithms affected by feature rescaling
 
 - Decision Trees
 - SVM with RBF Kernel
@@ -45,17 +45,23 @@ print featureScaling(data)
 
 In contrast, Decision Trees and Linear Regression don't measure distances. Decision Trees define for each feature available some constant value in order to split the data. So if we scale that feature, we will be scaling the constant split value by the same amount and the result won't be changed. In a similar way, Linear Regression defines coefficients for each feature available, so they are independent from each other and rescaling the features won't change the results 
 
-## Why Feature Selection?
+## Feature Selection
+
+### Why Feature Selection?
 
 - Knowledge Discovery: usually we don't need all the features to solve a problem. Also, selecting the important features allow us to understand, interpret, visualize and get more insights about the problem.
     - Interpretability
     - Insight
 - Curse of dimensionality: to correctly fit a model, we need 2<sup>n</sup> training data, where `n` is the number of features of our model.
 
-## How hard is feature selection?
+### How hard is feature selection?
 
 Feature selection is defined as:
     
     F(N) -> M, where M ≤ N
 
 To select all *M* relevant features from *N*, without knowing *M*, we need to try all subsets of *N*. This give us ![n choose m](http://latex.codecogs.com/gif.latex?%7Bn%20%5Cchoose%20m%7D) combinations, which, if we don't know *m* equals *2<sup>n</sup>* possibilities.
+
+### Filtering and Wrapping Overview
+
+![Filtering and Wrapping Overview](images/filtering-wrapping.png)
