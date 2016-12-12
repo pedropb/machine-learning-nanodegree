@@ -65,3 +65,8 @@ To select all *M* relevant features from *N*, without knowing *M*, we need to tr
 ### Filtering and Wrapping Overview
 
 ![Filtering and Wrapping Overview](images/filtering-wrapping.png)
+
+- `Filtering` is a straightforward process where the search algorithm and the learner don't interact.
+- In contrast, in `wrapping` the learner gives feedback to the search algorithm about which features are impacting the learning process. Because of this, it is slower than filtering.
+
+   
