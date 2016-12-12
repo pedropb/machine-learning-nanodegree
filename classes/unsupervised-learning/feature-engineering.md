@@ -51,3 +51,11 @@ In contrast, Decision Trees and Linear Regression don't measure distances. Decis
     - Interpretability
     - Insight
 - Curse of dimensionality: to correctly fit a model, we need 2<sup>n</sup> training data, where `n` is the number of features of our model.
+
+## How hard is feature selection?
+
+Feature selection is defined as:
+    
+    F(N) -> M, where M ≤ N
+
+To select all *M* relevant features from *N*, without knowing *M*, we need to try all subsets of *N*. This give us ![n choose m](http://latex.codecogs.com/gif.latex?%7Bn%20%5Cchoose%20m%7D) combinations, which, if we don't know *m* equals *2<sup>n</sup>* possibilities.
