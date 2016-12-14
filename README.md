@@ -1,6 +1,6 @@
 ---
+layout: post
 title: Machine Learning Nanodegree Class Notes
-layout: page 
 ---
 
 # Machine Learning Nanodegree Class Notes
