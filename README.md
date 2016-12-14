@@ -1,8 +1,3 @@
----
-layout: default
-title: Machine Learning Nanodegree Class Notes
----
-
 # Machine Learning Nanodegree Class Notes
 
 This repo stores all my class notes, exercises and projects for [Udacity's Machine Learning Nanodegree](https://www.udacity.com/course/machine-learning-engineer-nanodegree--nd009/) starting on November 5th 2016.
