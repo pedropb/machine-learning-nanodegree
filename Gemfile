@@ -1,1 +1,1 @@
-gem "jekyll-athena"
+gem "minima"
