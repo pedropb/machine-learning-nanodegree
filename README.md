@@ -21,7 +21,7 @@ This repo stores all my class notes, exercises and projects for [Udacity's Machi
 4. Unsupervised Learning
     1. [Clustering](classes/unsupervised-learning/clustering.md)
     2. [Feature Engineering](classes/unsupervised-learning/feature-engineering.md)
-    3. Dimesionality Reduction
+    3. [Dimesionality Reduction](classes/unsupervised-learning/dimesionality-reduction.md)
 5. Reinforcement Learning
 6. Deep Learning
 7. Machine Learning Specializations
