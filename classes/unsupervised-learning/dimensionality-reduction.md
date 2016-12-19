@@ -66,3 +66,10 @@ In the image above:
 - LDA: Linear Discriminant Analysis consists of using labels to find projections that summarize the data.
 
 ![Alternatives to PCA and ICA](images/alternatives.png)
+
+### Summary
+
+[This excellent paper](http://computation.llnl.gov/casc/sapphire/pubs/148494.pdf) is a great resource for the Feature Transformation methods from this course, and beyond
+
+
+![Summary](images/summary.png)
