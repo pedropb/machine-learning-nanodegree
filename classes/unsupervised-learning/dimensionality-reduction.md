@@ -47,7 +47,7 @@ Independent component analysis (ICA) is a method in which the goal is to find a 
     - maximizes reconstruction
     - order between found features matters - former features cover more variance than latter features
     - works better on gaussian distributions
-    - is a linear geometry analysis
+    - is a linear algebra analysis
 
 ![ICA vs PCA examples](images/ica-vs-pca.png)
 
