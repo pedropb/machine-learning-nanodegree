@@ -26,8 +26,36 @@
 
 ### Independent Component Analysis
 
-Independent component analysis (ICA) is a method in which the goal is to find a linear representation of nongaussian data so that the components are statistically independent, or as independent as possible. [This paper](http://mlsp.cs.cmu.edu/courses/fall2012/lectures/ICA_Hyvarinen.pdf) describes ICA in detail.
+Independent component analysis (ICA) is a method in which the goal is to find a linear representation of nongaussian data so that the components are statistically independent, or as independent as possible. [This paper](http://mlsp.cs.cmu.edu/courses/fall2012/lectures/ICA_Hyvarinen.pdf) describes ICA in detail. ICA has also been applied to the information retrieval problem, in a [paper](http://www.cc.gatech.edu/~isbell/papers/isbell-ica-nips-1999.pdf) written by Charles himself.
 
 [The cocktail party demo](http://research.ics.aalto.fi/ica/cocktail/cocktail_en.cgi) is an example of ICA application
 
 ![ICA notes](images/ica-notes.png)
+
+### ICA vs PCA
+
+- ICA:
+    - finds hidden features 
+    - finds *statistically independent* features
+    - maximizes mutual information
+    - order between found features don't matter
+    - works better on nongaussian distributions
+    - is a probabilistic analysis
+- PCA: 
+    - decomposes the data onto orthogonal dimensions
+    - maximizes variance
+    - maximizes reconstruction
+    - order between found features matters - former features cover more variance than latter features
+    - works better on gaussian distributions
+    - is a linear geometry analysis
+
+![ICA vs PCA examples](images/ica-vs-pca.png)
+
+In the image above:
+- *BSS* stands for Blind Source Separation problem (ie: Cocktail Party).
+- Directional means that ICA input direction is meaningful. For example, ICA will output two different results for a matrix M and M<sup>T</sup>, while, PCA will output the same result for both inputs.
+- Faces: PCA will find Brightness, then Average Face (*eigenfaces*), while ICA will find feature selectors like noses, mouths, eyes, etc.
+- Natural Scenes: ICA will find edges.
+- Documents: ICA will find topics.
+
+![ICA vs PCA quiz](images/ica-vs-pca-2.png)
