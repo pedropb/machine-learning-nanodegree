@@ -59,3 +59,10 @@ In the image above:
 - Documents: ICA will find topics.
 
 ![ICA vs PCA quiz](images/ica-vs-pca-2.png)
+
+### Alternatives
+
+- RCA: Random Component Analysis consists on projecting the data into random dimensions. It works in both cases, when M < N and also where M > N (for example: Kernel Methods)
+- LDA: Linear Discriminant Analysis consists of using labels to find projections that summarize the data.
+
+![Alternatives to PCA and ICA](images/alternatives.png)
