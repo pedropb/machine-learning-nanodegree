@@ -72,19 +72,19 @@ which is demonstrated by:
 ![Maximal Discounted Rewards Demonstrated](images/maximal-discounted-rewards.png)
 
 
-## Bellmond Equation
+## Bellman Equation
 
-![Bellmond Equation](images/bellmond-equation.png)
+![Bellman Equation](images/bellman-equation.png)
 
 ### Algorithmic Solution
 
-![Algorithmic Solution for Bellmond Equation](images/solving-bellmond-equation.png)
+![Algorithmic Solution for Bellman Equation](images/solving-bellman-equation.png)
 
-![Algorithmic Solution for Bellmond Equation Continuation](images/solving-bellmond-equation-2.png)
+![Algorithmic Solution for Bellman Equation Continuation](images/solving-bellman-equation-2.png)
 
 ### Example (Quiz)
 
-![Quiz Example](images/bellmond-quiz-example.png)
+![Quiz Example](images/bellman-quiz-example.png)
 
 ### Finding the Policies
 
