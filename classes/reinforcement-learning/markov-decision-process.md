@@ -39,8 +39,6 @@ Some examples of Policies affected by different rewards:
 
 ## Sequence of Rewards: Assumptions
 
-![Sequence of rewards assumptions](images/sequence-rewards.png)
-
 ### Infinite Horizons
 
 *Infinite Horizons* means we can take as many steps as we want through the MDP.
@@ -78,4 +76,7 @@ which is demonstrated by:
 
 ![Bellmond Equation](images/bellmond-equation.png)
 
+### Algorithm Solution
+
+![Algorithm Solution for Bellmond Equation](images/solving-bellmond-equation.png)
 
