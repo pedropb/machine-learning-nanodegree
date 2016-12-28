@@ -21,3 +21,5 @@ Side Note: Reinforcement is a misused term, because all we care is to maximize r
 ## Estimating Q
 
 ![Estimating Q](images/estimating-q.png)
+
+![Estimating Q 2](images/estimating-q-2.png)
