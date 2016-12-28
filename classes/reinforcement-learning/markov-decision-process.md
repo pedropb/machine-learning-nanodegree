@@ -82,9 +82,18 @@ which is demonstrated by:
 
 ![Algorithmic Solution for Bellmond Equation Continuation](images/solving-bellmond-equation-2.png)
 
-## Example (Quiz)
+### Example (Quiz)
 
 ![Quiz Example](images/bellmond-quiz-example.png)
+
+## Finding the Policies
+
+While the solutions presented above find the true Utility Values for each state, we are not interested in finding these values, but instead we are interested in finding the Optimal Policy.
+
+The image below shows a simplification of the solutions elaborated previously to solve this.
+
+![Finding Policies](images/finding-policies.png)
+
 
 
 ## Summary
