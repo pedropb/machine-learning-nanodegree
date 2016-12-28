@@ -36,3 +36,44 @@ In *Reinforcement Learning*, we are given `x` and `z` and we try to find `f` and
 Some examples of Policies affected by different rewards:
 
 ![Rewards affecting policies](images/more-rewards.png)
+
+## Sequence of Rewards: Assumptions
+
+![Sequence of rewards assumptions](images/sequence-rewards.png)
+
+### Infinite Horizons
+
+*Infinite Horizons* means we can take as many steps as we want through the MDP.
+
+### Utility of Sequences
+
+*Utility of Sequences* measures the total reward value of a given sequence of steps.
+
+#### Sum of each step reward
+
+![Sum of each step reward](http://latex.codecogs.com/gif.latex?$$%5Csum_%7Bt=0%7D%5E%7B%5Cinfty%7DR(S_t))
+
+The sum of all rewards for each step is not a good measure of utility because, assuming we are working with infinite horizons, we will have infinite and all sequences will always provide infinite utility, as shown below.
+
+![Quiz example](images/utility-quiz-infinite.png)
+
+#### Discounted Rewards
+
+![Discounted Rewards](http://latex.codecogs.com/gif.latex?$$%5Csum_%7Bt=0%7D%5E%7B%5Cinfty%7D%5Cgamma%5EtR(S_t))
+
+Discounted rewards is a geometric sequence that provides a finite number to measure the utility against sequences.
+
+![Discounted Rewards Explained](images/discounted-utility-rewards.png)
+
+Maximization of discounted rewards:
+
+![Maximal Discounted Rewards](http://latex.codecogs.com/gif.latex?$$%5Cfrac%7BR_%7Bmax%7D%7D%7B1-%5Cgamma%7D)
+
+which is demonstrated by:
+
+![Maximal Discounted Rewards Demonstrated](images/maximal-discounted-rewards.png)
+
+
+
+
+
