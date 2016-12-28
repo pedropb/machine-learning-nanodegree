@@ -24,6 +24,7 @@ This repo stores all my class notes, exercises and projects for [Udacity's Machi
     3. [Dimesionality Reduction](classes/unsupervised-learning/dimensionality-reduction.md)
 5. [Reinforcement Learning](classes/reinforcement-learning/markov-decision-process.md)
     1. [Markov Decision Process](classes/reinforcement-learning/markov-decision-process.md)
+    2. [Reinforcement Learning](classes/reinforcement-learning/reinforcement-learning.md)
 6. Deep Learning
 7. Machine Learning Specializations
 
