@@ -86,7 +86,7 @@ which is demonstrated by:
 
 ![Quiz Example](images/bellmond-quiz-example.png)
 
-## Finding the Policies
+### Finding the Policies
 
 While the solutions presented above find the true Utility Values for each state, we are not interested in finding these values, but instead we are interested in finding the Optimal Policy.
 
