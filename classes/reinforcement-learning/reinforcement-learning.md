@@ -27,3 +27,7 @@ Side Note: Reinforcement is a misused term, because all we care is to maximize r
 ## Q-Learning Convergence
 
 ![Q-Learning Convergence](images/q-learning-convergence.png)
+
+## Choosing Actions
+
+![Choosing Actions](images/choosing-actions.png)
