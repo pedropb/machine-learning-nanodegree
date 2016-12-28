@@ -30,3 +30,9 @@ In *Reinforcement Learning*, we are given `x` and `z` and we try to find `f` and
     - All these representations provide the same mathematical value and can be modeled by `R(s)` alone.
 - Policy - represents the "master plan" to solve the problem. It is represented by the function `π(s) = a`, where for any given state `s` it outputs the best course of action `a` to take.
     - `π*` represents the optimal solution - the function that maximizes the rewards.
+
+## More on rewards
+
+Some examples of Policies affected by different rewards:
+
+![Rewards affecting policies](images/more-rewards.png)
