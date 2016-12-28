@@ -28,8 +28,8 @@ In *Reinforcement Learning*, we are given `x` and `z` and we try to find `f` and
     - `R(s,a)`: being on state `s` and taking action `a`
     - `R(s,a,s')`:  being on state `s`, taking action `a` and achieving state `s'`.
     - All these representations provide the same mathematical value and can be modeled by `R(s)` alone.
-- Policy - represents the "master plan" to solve the problem. It is represented by the function `π(s) = a`, where for any given state `s` it outputs the best course of action `a` to take.
-    - `π*` represents the optimal solution - the function that maximizes the rewards.
+- Policy - represents the "master plan" to solve the problem. It is represented by a mapping of states to actions `π(s) -> a`, where for any given state `s` it outputs the best course of action `a` to take.
+    - `π*` represents the optimal solution - the mapping that maximizes the rewards.
 
 ## More on rewards
 
@@ -76,7 +76,8 @@ which is demonstrated by:
 
 ![Bellmond Equation](images/bellmond-equation.png)
 
-### Algorithm Solution
+### Algorithmic Solution
 
-![Algorithm Solution for Bellmond Equation](images/solving-bellmond-equation.png)
+![Algorithmic Solution for Bellmond Equation](images/solving-bellmond-equation.png)
 
+![Algorithmic Solution for Bellmond Equation Continuation](images/solving-bellmond-equation-2.png)
