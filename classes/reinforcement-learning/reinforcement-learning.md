@@ -17,3 +17,7 @@ Side Note: Reinforcement is a misused term, because all we care is to maximize r
 ## Q Value Function
 
 ![Q Value Function](images/q-value-function.png)
+
+## Estimating Q
+
+![Estimating Q](images/estimating-q.png)
