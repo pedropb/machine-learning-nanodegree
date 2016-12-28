@@ -31,3 +31,11 @@ Side Note: Reinforcement is a misused term, because all we care is to maximize r
 ## Choosing Actions
 
 ![Choosing Actions](images/choosing-actions.png)
+
+## Greedy Exploration
+
+![Greedy Exploration](images/greedy-exploration.png)
+
+## Summary
+
+![Summary](rl-summary.png)
