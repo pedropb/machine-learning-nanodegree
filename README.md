@@ -4,13 +4,13 @@ This repo stores all my class notes, exercises and projects for [Udacity's Machi
 
 ## Class Notes
 
-1. Welcome to the Nanodegree
+1. [Welcome to the Nanodegree](classes/welcome-to-the-nano-degree/notes/welcome-to-the-mlnd-program.md))
     1. [Welcome to the Machine Learning Nanodegree Program](classes/welcome-to-the-nano-degree/notes/welcome-to-the-mlnd-program.md)
     2. [What is Machine Learning](classes/welcome-to-the-nano-degree/notes/what-is-machine-learning.md)
-2. Model Evaluation and Validation
+2. [Model Evaluation and Validation](classes/model-evaluation-and-validation/evaluation-and-validation.md)
     1. [Evaluation and Validation](classes/model-evaluation-and-validation/evaluation-and-validation.md)
     2. [Managing Error and Complexity](classes/model-evaluation-and-validation/managing-error-and-complexity.md)
-3. Supervised Learning
+3. [Supervised Learning](classes/supervised-learning/supervised-learning.md)
     1. [Supervised Learning Tasks](classes/supervised-learning/supervised-learning.md)
     2. [Decision Trees](classes/supervised-learning/decision-trees.md)
     3. [Artificial Neural Networks](classes/supervised-learning/artificial-neural-networks.md)
@@ -18,11 +18,12 @@ This repo stores all my class notes, exercises and projects for [Udacity's Machi
     5. [Non Parametric Models](classes/supervised-learning/nonparametric-models.md)
     6. [Bayesian Methods](classes/supervised-learning/bayesian-methods.md)
     7. [Ensemble of Learners](classes/supervised-learning/ensemble-learners.md)
-4. Unsupervised Learning
+4. [Unsupervised Learning](classes/unsupervised-learning/clustering.md)
     1. [Clustering](classes/unsupervised-learning/clustering.md)
     2. [Feature Engineering](classes/unsupervised-learning/feature-engineering.md)
     3. [Dimesionality Reduction](classes/unsupervised-learning/dimensionality-reduction.md)
-5. Reinforcement Learning
+5. [Reinforcement Learning](classes/reinforcement-learning/markov-decision-process.md)
+    1. [Markov Decision Process](classes/reinforcement-learning/markov-decision-process.md)
 6. Deep Learning
 7. Machine Learning Specializations
 
