@@ -85,3 +85,8 @@ which is demonstrated by:
 ## Example (Quiz)
 
 ![Quiz Example](images/bellmond-quiz-example.png)
+
+
+## Summary
+
+![Summary](images/mdp-summary.png)
