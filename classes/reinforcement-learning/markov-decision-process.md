@@ -81,3 +81,7 @@ which is demonstrated by:
 ![Algorithmic Solution for Bellmond Equation](images/solving-bellmond-equation.png)
 
 ![Algorithmic Solution for Bellmond Equation Continuation](images/solving-bellmond-equation-2.png)
+
+## Example (Quiz)
+
+![Quiz Example](images/bellmond-quiz-example.png)
