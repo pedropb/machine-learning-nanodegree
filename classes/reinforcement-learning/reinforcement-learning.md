@@ -13,3 +13,7 @@ Side Note: Reinforcement is a misused term, because all we care is to maximize r
 ## Reinforcement Learning Approaches
 
 ![RL Approaches](images/rl-approaches.png)
+
+## Q Value Function
+
+![Q Value Function](images/q-value-function.png)
