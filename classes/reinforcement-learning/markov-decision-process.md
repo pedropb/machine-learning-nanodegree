@@ -74,6 +74,8 @@ which is demonstrated by:
 ![Maximal Discounted Rewards Demonstrated](images/maximal-discounted-rewards.png)
 
 
+## Bellmond Equation
 
+![Bellmond Equation](images/bellmond-equation.png)
 
 
