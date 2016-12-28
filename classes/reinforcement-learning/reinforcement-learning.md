@@ -23,3 +23,7 @@ Side Note: Reinforcement is a misused term, because all we care is to maximize r
 ![Estimating Q](images/estimating-q.png)
 
 ![Estimating Q 2](images/estimating-q-2.png)
+
+## Q-Learning Convergence
+
+![Q-Learning Convergence](images/q-learning-convergence.png)
