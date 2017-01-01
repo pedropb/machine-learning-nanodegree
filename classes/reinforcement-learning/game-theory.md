@@ -33,3 +33,8 @@ And the result of minimax for this game is `3`, because of the Fundamental Resul
 The "Other Theorem" is the Fundamental Result Theorem.
 
 
+## Hidden information Game
+
+![Hidden information Game](images/hidden-info-game.png)
+
+![Hidden information Game 2](images/hidden-info-game-2.png)
