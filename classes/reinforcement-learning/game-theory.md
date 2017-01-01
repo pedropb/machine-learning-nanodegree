@@ -46,3 +46,12 @@ The "Other Theorem" is the Fundamental Result Theorem.
 ### Mini poker result
 
 ![Mini Poker Result](images/mini-poker-result.png)
+
+## Prisioner's Dilemma (Non Zero Sum Game)
+
+![Prisioner's Dilemma](images/prisioners-dilemma.png)
+
+## Nash Equilibrium
+
+![Nash Equilibrium](images/nash-equilibrium.png)
+
