@@ -4,11 +4,13 @@
 
 ![What is Game Theory](images/what-is-game-theory.png)
 
-## Minimax
+## Simple game
 
 Given the simple game below:
 
 ![A Simple Game](images/game-example.png)
+
+### Minimax
 
 The game-matrix can be calculated as:
 
@@ -19,5 +21,15 @@ And the result of minimax for this game is `3`, because of the Fundamental Resul
 ### Fundamental Result Theorem
 
 ![Fundamental Result Theorem](images/fundamental-result.png)
+
+## Non-deterministic Game
+
+![Non-deterministic Game](images/non-deterministic-game.png)
+
+### Von Neumann Theorem
+
+![Von Neumann Theorem](images/von-neumann.png)
+
+The "Other Theorem" is the Fundamental Result Theorem.
 
 
