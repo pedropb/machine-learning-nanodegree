@@ -55,3 +55,10 @@ The "Other Theorem" is the Fundamental Result Theorem.
 
 ![Nash Equilibrium](images/nash-equilibrium.png)
 
+### Nash Equilibrium Example
+
+![Nash Equilibrium Example](images/nash-equilibrium-example.png)
+
+### Nash Equilibrium Implications
+
+![Nash Equilibrium Implications](images/nash-equilibrium-implications.png)
