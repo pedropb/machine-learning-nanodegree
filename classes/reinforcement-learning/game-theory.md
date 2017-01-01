@@ -38,3 +38,7 @@ The "Other Theorem" is the Fundamental Result Theorem.
 ![Hidden information Game](images/hidden-info-game.png)
 
 ![Hidden information Game 2](images/hidden-info-game-2.png)
+
+### Mixed Strategy
+
+![Mixed Strategy](images/mixed-strategy.png)
