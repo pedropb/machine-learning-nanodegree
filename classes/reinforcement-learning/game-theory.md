@@ -42,3 +42,7 @@ The "Other Theorem" is the Fundamental Result Theorem.
 ### Mixed Strategy
 
 ![Mixed Strategy](images/mixed-strategy.png)
+
+### Mini poker result
+
+![Mini Poker Result](images/mini-poker-result.png)
