@@ -58,7 +58,7 @@ class LearningAgent(Agent):
         # Collect data about the environment
         waypoint = self.planner.next_waypoint() # The next waypoint 
         inputs = self.env.sense(self)           # Visual input - intersection light and traffic
-        deadline = self.env.get_deadline(self)  # Remaining deadline
+        # deadline = self.env.get_deadline(self)  # Remaining deadline
 
         ########### 
         ## TO DO ##
@@ -121,14 +121,14 @@ class LearningAgent(Agent):
             if self.epsilon > random.random():
                 action = self.valid_actions[random.randrange(0,len(self.valid_actions))]
             else:
-                action = self.Q[self.get_maxQ(state)]
+                action = self.get_maxQ(state)
  
         return action
 
 
     def learn(self, state, action, reward):
         """ The learn function is called after the agent completes an action and
-            receives an award. This function does not consider future rewards 
+            receives a reward. This function does not consider future rewards 
             when conducting learning. """
 
         ########### 
@@ -136,6 +136,7 @@ class LearningAgent(Agent):
         ###########
         # When learning, implement the value iteration update rule
         #   Use only the learning rate 'alpha' (do not use the discount factor 'gamma')
+        self.Q[state][action] += (self.alpha * reward)
 
         return
 
