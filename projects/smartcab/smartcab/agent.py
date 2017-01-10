@@ -117,7 +117,11 @@ class LearningAgent(Agent):
 
         if not self.learning:
             action = self.valid_actions[random.randrange(0,len(self.valid_actions))]
-            
+        else:
+            if self.epsilon > random.random():
+                action = self.valid_actions[random.randrange(0,len(self.valid_actions))]
+            else:
+                action = self.Q[self.get_maxQ(state)]
  
         return action
 
