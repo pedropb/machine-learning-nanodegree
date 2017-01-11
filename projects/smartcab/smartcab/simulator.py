@@ -125,6 +125,8 @@ class Simulator(object):
         testing = False
         trial = 1
 
+        step_counter = 0
+
         while True:
 
             # Flip testing switch
@@ -180,6 +182,7 @@ class Simulator(object):
                     # Update environment
                     if self.current_time - self.last_updated >= self.update_delay:
                         self.env.step()
+                        step_counter += 1
                         self.last_updated = self.current_time
                     
                     # Render text
@@ -244,6 +247,10 @@ class Simulator(object):
             self.log_file.close()
 
         print "\nSimulation ended. . . "
+
+        print "\nAverage steps per trial: {}".format(round(float(step_counter) / total_trials))
+        print "\nTotal number of steps: {}".format(step_counter)
+        print "\nQ-table size: {}".format(len(a.Q.keys()))
 
         # Report final metrics
         if self.display:
