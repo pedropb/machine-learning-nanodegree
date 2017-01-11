@@ -22,6 +22,7 @@ class LearningAgent(Agent):
         ###########
         ## TO DO ##
         ###########
+        self.trial_number = 0
         # Set any additional class parameters as needed
 
 
@@ -29,6 +30,9 @@ class LearningAgent(Agent):
         """ The reset function is called at the beginning of each trial.
             'testing' is set to True if testing trials are being used
             once training trials have completed. """
+
+        # Increment trial_number
+        self.trial_number += 1
 
         # Select the destination as the new location to route to
         self.planner.route_to(destination)
@@ -44,7 +48,7 @@ class LearningAgent(Agent):
             self.epsilon = 0
             self.alpha = 0
         else:
-            self.epsilon = self.epsilon - 0.05
+            self.epsilon = math.e ** -(self.alpha * self.trial_number)
 
 
 
@@ -174,7 +178,7 @@ def run():
     #    * epsilon - continuous value for the exploration factor, default is 1
     #    * alpha   - continuous value for the learning rate, default is 0.5
     # agent = env.create_agent(LearningAgent)
-    agent = env.create_agent(LearningAgent, learning=True)
+    agent = env.create_agent(LearningAgent, learning=True, alpha=0.05)
     
     ##############
     # Follow the driving agent
@@ -191,7 +195,7 @@ def run():
     #   log_metrics  - set to True to log trial and simulation results to /logs
     #   optimized    - set to True to change the default log file name
     # sim = Simulator(env, update_delay=5.)
-    sim = Simulator(env, update_delay=0.01, log_metrics=True, display=False)
+    sim = Simulator(env, update_delay=0.01, log_metrics=True, display=False, optimized=True)
     
     ##############
     # Run the simulator
@@ -199,7 +203,7 @@ def run():
     #   tolerance  - epsilon tolerance before beginning testing, default is 0.05 
     #   n_test     - discrete number of testing trials to perform, default is 0
     # sim.run()
-    sim.run(n_test=10)
+    sim.run(n_test=10, tolerance=0.0001)
 
 
 if __name__ == '__main__':
