@@ -50,9 +50,11 @@ class LearningAgent(Agent):
             self.alpha = 0
         else:
             if self.optimized:
-                self.epsilon = math.e ** -(self.alpha * self.trial_number)
-                # self.epsilon = 1 / self.trial_number ** 2
                 # self.epsilon = self.alpha ** self.trial_number
+                # self.epsilon = 1 / self.trial_number ** 2
+                self.epsilon = math.e ** -(self.alpha * self.trial_number)
+                # self.epsilon = math.cos(self.alpha * self.trial_number)
+
             else:
                 self.epsilon = self.epsilon - 0.05
 
@@ -150,7 +152,7 @@ class LearningAgent(Agent):
         # When learning, implement the value iteration update rule
         #   Use only the learning rate 'alpha' (do not use the discount factor 'gamma')
         if self.learning: 
-            self.Q[state][action] += (self.alpha * reward)
+            self.Q[state][action] = self.Q[state][action] * (1 - self.alpha) + (self.alpha * reward)
 
         return
 
@@ -173,7 +175,8 @@ def get_random_agent_params():
         "learning": False,
         "optimized": False,
         "alpha": 0.5,
-        "tolerance": 0.5
+        "tolerance": 0.5,
+        "n_test": 10
     }
 
 
@@ -186,8 +189,8 @@ def get_basic_agent_params():
 def get_optimized_agent_params():
     d = get_basic_agent_params()
     d["optimized"] = True
-    d["alpha"] = 0.5
-    d["tolerance"] = 0.001  
+    d["alpha"] = 0.1
+    d["tolerance"] = 0.0001
     return d
 
 
@@ -195,6 +198,7 @@ def run():
     """ Driving function for running the simulation. 
         Press ESC to close the simulation, or [SPACE] to pause the simulation. """
     
+    #params = get_basic_agent_params()
     params = get_optimized_agent_params()
     
         ##############
@@ -233,7 +237,7 @@ def run():
     # Flags:
     #   tolerance  - epsilon tolerance before beginning testing, default is 0.05 
     #   n_test     - discrete number of testing trials to perform, default is 0
-    sim.run(n_test=10, tolerance=params["tolerance"])
+    sim.run(n_test=params["n_test"], tolerance=params["tolerance"])
 
 
 if __name__ == '__main__':
