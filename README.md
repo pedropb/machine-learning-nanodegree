@@ -33,8 +33,8 @@ This repo stores all my class notes, exercises and projects for [Udacity's Machi
 1. Exploratory Project: [Titanic Survival](projects/titanic-survival-exploration/report.html)
 2. Model and Evaluation Project: [Boston Housing Prices](projects/boston-housing-prices/report.html)
 3. Supervised Learning Project: [Finding Donors for CharityML](projects/boston-housing-prices/report.html)
-4. Unsupervised Learning Project: Creating Customers Segment
-5. Reinforcement Learning Project: Train a Smartcab to Drive
+4. Unsupervised Learning Project: [Creating Customers Segment](projects/customer_segments/report.html)
+5. Reinforcement Learning Project: [Train a Smartcab to Drive](projects/smartcab/smartcab.ipynb)
 6. Deep Learning Project: Build a Digit Recognition Program
 7. Capstone Project: TBA
 
