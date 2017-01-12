@@ -8,13 +8,14 @@ class LearningAgent(Agent):
     """ An agent that learns to drive in the Smartcab world.
         This is the object you will be modifying. """ 
 
-    def __init__(self, env, learning=False, epsilon=1.0, alpha=0.5):
+    def __init__(self, env, learning=False, epsilon=1.0, alpha=0.5, optimized=False):
         super(LearningAgent, self).__init__(env)     # Set the agent in the evironment 
         self.planner = RoutePlanner(self.env, self)  # Create a route planner
         self.valid_actions = self.env.valid_actions  # The set of valid actions
 
         # Set parameters of the learning agent
         self.learning = learning # Whether the agent is expected to learn
+        self.optimized = optimized # Whether the agent is optimized
         self.Q = dict()          # Create a Q-table which will be a dictionary of tuples
         self.epsilon = epsilon   # Random exploration factor
         self.alpha = alpha       # Learning factor
@@ -48,9 +49,12 @@ class LearningAgent(Agent):
             self.epsilon = 0
             self.alpha = 0
         else:
-            self.epsilon = math.e ** -(self.alpha * self.trial_number)
-
-
+            if self.optimized:
+                self.epsilon = math.e ** -(self.alpha * self.trial_number)
+                # self.epsilon = 1 / self.trial_number ** 2
+                # self.epsilon = self.alpha ** self.trial_number
+            else:
+                self.epsilon = self.epsilon - 0.05
 
         return None
 
@@ -82,7 +86,12 @@ class LearningAgent(Agent):
         ## TO DO ##
         ###########
         # Calculate the maximum Q-value of all actions for a given state
-        maxQ = max(self.Q[state])
+        maxQ = None
+        max_reward = None
+        for k,v in self.Q[state].iteritems():
+            if max_reward == None or v > max_reward:
+                max_reward = v
+                maxQ = k
 
         return maxQ 
 
@@ -140,7 +149,8 @@ class LearningAgent(Agent):
         ###########
         # When learning, implement the value iteration update rule
         #   Use only the learning rate 'alpha' (do not use the discount factor 'gamma')
-        self.Q[state][action] += (self.alpha * reward)
+        if self.learning: 
+            self.Q[state][action] += (self.alpha * reward)
 
         return
 
@@ -158,12 +168,36 @@ class LearningAgent(Agent):
 
         return
         
+def get_random_agent_params():
+    return {
+        "learning": False,
+        "optimized": False,
+        "alpha": 0.5,
+        "tolerance": 0.5
+    }
+
+
+def get_basic_agent_params():
+    d = get_random_agent_params()
+    d["learning"] = True
+    return d
+
+
+def get_optimized_agent_params():
+    d = get_basic_agent_params()
+    d["optimized"] = True
+    d["alpha"] = 0.5
+    d["tolerance"] = 0.001  
+    return d
+
 
 def run():
     """ Driving function for running the simulation. 
         Press ESC to close the simulation, or [SPACE] to pause the simulation. """
-
-    ##############
+    
+    params = get_optimized_agent_params()
+    
+        ##############
     # Create the environment
     # Flags:
     #   verbose     - set to True to display additional output from the simulation
@@ -177,14 +211,12 @@ def run():
     #   learning   - set to True to force the driving agent to use Q-learning
     #    * epsilon - continuous value for the exploration factor, default is 1
     #    * alpha   - continuous value for the learning rate, default is 0.5
-    # agent = env.create_agent(LearningAgent)
-    agent = env.create_agent(LearningAgent, learning=True, alpha=0.05)
+    agent = env.create_agent(LearningAgent, learning=params["learning"], alpha=params["alpha"], optimized=params["optimized"])
     
     ##############
     # Follow the driving agent
     # Flags:
     #   enforce_deadline - set to True to enforce a deadline metric
-    # env.set_primary_agent(agent)
     env.set_primary_agent(agent, enforce_deadline=True)
 
     ##############
@@ -194,16 +226,14 @@ def run():
     #   display      - set to False to disable the GUI if PyGame is enabled
     #   log_metrics  - set to True to log trial and simulation results to /logs
     #   optimized    - set to True to change the default log file name
-    # sim = Simulator(env, update_delay=5.)
-    sim = Simulator(env, update_delay=0.01, log_metrics=True, display=False, optimized=True)
+    sim = Simulator(env, update_delay=0.01, log_metrics=True, display=False, optimized=params["optimized"])
     
     ##############
     # Run the simulator
     # Flags:
     #   tolerance  - epsilon tolerance before beginning testing, default is 0.05 
     #   n_test     - discrete number of testing trials to perform, default is 0
-    # sim.run()
-    sim.run(n_test=10, tolerance=0.0001)
+    sim.run(n_test=10, tolerance=params["tolerance"])
 
 
 if __name__ == '__main__':
