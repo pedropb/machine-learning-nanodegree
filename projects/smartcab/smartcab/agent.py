@@ -1,5 +1,6 @@
 import random
 import math
+import sys
 from environment import Agent, Environment
 from planner import RoutePlanner
 from simulator import Simulator
@@ -135,7 +136,18 @@ class LearningAgent(Agent):
         return
         
 
-def run():
+class BasicAgent(LearningAgent):
+    def choose_action(self, state):
+        """ The choose_action function is called when the agent is asked to choose
+            which action to take, based on the 'state' the smartcab is in. """
+
+        # Set the agent state and default action
+        self.state = state
+        self.next_waypoint = self.planner.next_waypoint()
+ 
+        return self.valid_actions[random.randrange(0,len(self.valid_actions))]
+
+def run(agent_type):
     """ Driving function for running the simulation. 
         Press ESC to close the simulation, or [SPACE] to pause the simulation. """
 
@@ -153,13 +165,14 @@ def run():
     #   learning   - set to True to force the driving agent to use Q-learning
     #    * epsilon - continuous value for the exploration factor, default is 1
     #    * alpha   - continuous value for the learning rate, default is 0.5
-    agent = env.create_agent(LearningAgent)
+    if agent_type == 'basic':
+        agent = env.create_agent(BasicAgent)
     
     ##############
     # Follow the driving agent
     # Flags:
     #   enforce_deadline - set to True to enforce a deadline metric
-    env.set_primary_agent(agent)
+    env.set_primary_agent(agent, enforce_deadline=True)
 
     ##############
     # Create the simulation
@@ -168,15 +181,20 @@ def run():
     #   display      - set to False to disable the GUI if PyGame is enabled
     #   log_metrics  - set to True to log trial and simulation results to /logs
     #   optimized    - set to True to change the default log file name
-    sim = Simulator(env)
+    sim = Simulator(env, update_delay=0.01, display=False, log_metrics=True)
     
     ##############
     # Run the simulator
     # Flags:
     #   tolerance  - epsilon tolerance before beginning testing, default is 0.05 
     #   n_test     - discrete number of testing trials to perform, default is 0
-    sim.run()
+    sim.run(n_test=10)
 
 
 if __name__ == '__main__':
-    run()
+    random.seed(42)
+    agent_type = 'optimized'
+    if len(sys.argv) >= 2:
+        agent_type = sys.argv[1]
+
+    run(agent_type)
