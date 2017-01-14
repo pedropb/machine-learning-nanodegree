@@ -419,10 +419,10 @@ if __name__ == '__main__':
         agent_type = sys.argv[1]
 
     #for alpha in [0.01, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]:
-    alphas = np.arange(0, 1.1, 0.1)
-    alphas[0] = 0.05
-    alphas = np.concatenate(([0.01], alphas))
-    for alpha in [0.01]:
+    alphas = np.arange(1.0, 0, -0.1)
+    alphas = np.append(alphas, 0.05)
+    alphas = np.append(alphas, 0.01)
+    for alpha in alphas:
         training_trials = run(agent_type, alpha, tolerance, n_test)
         data = pd.read_csv(os.path.join("logs", "sim_improved-learning.csv"))
         data['good_actions'] = data['actions'].apply(lambda x: ast.literal_eval(x)[0])
