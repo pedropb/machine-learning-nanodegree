@@ -404,7 +404,7 @@ def calculate_reliability(data):
 			return ("F", "red")
 
 if __name__ == '__main__':
-    random.seed(10)
+    random.seed(42)
     
     # default agent
     agent_type = 'optimized'
