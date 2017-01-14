@@ -244,10 +244,13 @@ class Simulator(object):
             self.log_file.close()
 
         print "\nSimulation ended. . . "
+        print "\nTotal training trials: {}".format(total_trials - n_test - 1)
 
         # Report final metrics
         if self.display:
             self.pygame.display.quit()  # shut down pygame
+        
+        return (total_trials - n_test - 1)
 
     def render_text(self, trial, testing=False):
         """ This is the non-GUI render display of the simulation. 

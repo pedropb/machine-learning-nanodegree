@@ -5,6 +5,11 @@ from environment import Agent, Environment
 from planner import RoutePlanner
 from simulator import Simulator
 
+import numpy as np
+import pandas as pd
+import os
+import ast
+
 class LearningAgent(Agent):
     """ An agent that learns to drive in the Smartcab world.
         This is the object you will be modifying. """ 
@@ -149,7 +154,8 @@ class BasicAgent(LearningAgent):
 
 class InformedAgent(LearningAgent):
     def __init__(self, env):
-        super(InformedAgent, self).__init__(env, learning=True)
+        super(InformedAgent, self).__init__(env)
+        self.learning = True
 
     def reset(self, destination=None, testing=False):
         """ The reset function is called at the beginning of each trial.
@@ -267,7 +273,45 @@ class InformedAgent(LearningAgent):
 
         return
 
-def run(agent_type):
+class OptimizedAgent(InformedAgent):
+    def __init__(self, env, epsilon=1.0, alpha=0.5):
+        super(OptimizedAgent, self).__init__(env)
+        self.trial_number = 0
+        self.epsilon = epsilon
+        self.alpha = alpha
+
+
+    def reset(self, destination=None, testing=False):
+        """ The reset function is called at the beginning of each trial.
+            'testing' is set to True if testing trials are being used
+            once training trials have completed. """
+
+        # Select the destination as the new location to route to
+        self.planner.route_to(destination)
+        
+        ########### 
+        ## TO DO ##
+        ###########
+        # Update epsilon using a decay function of your choice
+        # Update additional class parameters as needed
+        # If 'testing' is True, set epsilon and alpha to 0
+
+        self.trial_number += 1
+
+        if testing:
+            self.epsilon = 0
+            self.alpha = 0
+        else:
+            # self.epsilon = self.epsilon - 0.01
+            self.epsilon = math.e ** -(self.alpha * self.trial_number)
+            # self.epsilon = self.alpha ** self.trial_number
+            # self.epsilon = 1 / self.trial_number ** 2
+            # self.epsilon = math.cos(self.alpha * self.trial_number)
+
+        return None
+
+
+def run(agent_type, alpha, tolerance, n_test):
     """ Driving function for running the simulation. 
         Press ESC to close the simulation, or [SPACE] to pause the simulation. """
 
@@ -285,10 +329,14 @@ def run(agent_type):
     #   learning   - set to True to force the driving agent to use Q-learning
     #    * epsilon - continuous value for the exploration factor, default is 1
     #    * alpha   - continuous value for the learning rate, default is 0.5
+    optimized = False
     if agent_type == 'basic':
         agent = env.create_agent(BasicAgent)
     elif agent_type == 'informed':
         agent = env.create_agent(InformedAgent)
+    else:
+        agent = env.create_agent(OptimizedAgent, alpha=alpha)
+        optimized = True
     
     ##############
     # Follow the driving agent
@@ -303,20 +351,88 @@ def run(agent_type):
     #   display      - set to False to disable the GUI if PyGame is enabled
     #   log_metrics  - set to True to log trial and simulation results to /logs
     #   optimized    - set to True to change the default log file name
-    sim = Simulator(env, update_delay=0.01, display=False, log_metrics=True)
+    sim = Simulator(env, update_delay=0.01, display=False, log_metrics=True, optimized=optimized)
     
     ##############
     # Run the simulator
     # Flags:
     #   tolerance  - epsilon tolerance before beginning testing, default is 0.05 
     #   n_test     - discrete number of testing trials to perform, default is 0
-    sim.run(n_test=10)
+    return sim.run(n_test=n_test, tolerance=tolerance)
 
+
+def calculate_safety(data):
+	""" Calculates the safety rating of the smartcab during testing. """
+
+	good_ratio = data['good_actions'].sum() * 1.0 / \
+	(data['initial_deadline'] - data['final_deadline']).sum()
+
+	if good_ratio == 1: # Perfect driving
+		return ("A+", "green")
+	else: # Imperfect driving
+		if data['actions'].apply(lambda x: ast.literal_eval(x)[4]).sum() > 0: # Major accident
+			return ("F", "red")
+		elif data['actions'].apply(lambda x: ast.literal_eval(x)[3]).sum() > 0: # Minor accident
+			return ("D", "#EEC700")
+		elif data['actions'].apply(lambda x: ast.literal_eval(x)[2]).sum() > 0: # Major violation
+			return ("C", "#EEC700")
+		else: # Minor violation
+			minor = data['actions'].apply(lambda x: ast.literal_eval(x)[1]).sum()
+			if minor >= len(data)/2: # Minor violation in at least half of the trials
+				return ("B", "green")
+			else:
+				return ("A", "green")
+
+
+def calculate_reliability(data):
+	""" Calculates the reliability rating of the smartcab during testing. """
+
+	success_ratio = data['success'].sum() * 1.0 / len(data)
+
+	if success_ratio == 1: # Always meets deadline
+		return ("A+", "green")
+	else:
+		if success_ratio >= 0.90:
+			return ("A", "green")
+		elif success_ratio >= 0.80:
+			return ("B", "green")
+		elif success_ratio >= 0.70:
+			return ("C", "#EEC700")
+		elif success_ratio >= 0.60:
+			return ("D", "#EEC700")
+		else:
+			return ("F", "red")
 
 if __name__ == '__main__':
-    random.seed(42)
+    random.seed(10)
+    
+    # default agent
     agent_type = 'optimized'
-    if len(sys.argv) >= 2:
+
+    # these params only work for optimized agent
+    tolerance = 0.01
+    n_test = 100
+    results = []
+
+    n = len(sys.argv)
+    if n == 2:
         agent_type = sys.argv[1]
 
-    run(agent_type)
+    #for alpha in [0.01, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]:
+    alphas = np.arange(0, 1.1, 0.1)
+    alphas[0] = 0.05
+    alphas = np.concatenate(([0.01], alphas))
+    for alpha in [0.01]:
+        training_trials = run(agent_type, alpha, tolerance, n_test)
+        data = pd.read_csv(os.path.join("logs", "sim_improved-learning.csv"))
+        data['good_actions'] = data['actions'].apply(lambda x: ast.literal_eval(x)[0])
+        testing_data = data[data['testing'] == True]
+
+        safety_rating, safety_color = calculate_safety(testing_data)
+        reliability_rating, reliability_color = calculate_reliability(testing_data)
+        print "Safety: {}, Reliability: {}".format(safety_rating, reliability_rating)
+        results.append({"trials": training_trials, "alpha": alpha, "tolerance": tolerance, "safety": safety_rating, "reliability": reliability_rating})
+
+    print "Results:"
+    for r in results:
+        print r
