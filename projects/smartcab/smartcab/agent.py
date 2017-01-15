@@ -418,10 +418,13 @@ if __name__ == '__main__':
     if n == 2:
         agent_type = sys.argv[1]
 
-    #for alpha in [0.01, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]:
-    alphas = np.arange(1.0, 0, -0.1)
-    alphas = np.append(alphas, 0.05)
-    alphas = np.append(alphas, 0.01)
+    # use this if you want to run a series of trials with varying alpha values
+    # alphas = np.arange(1.0, 0, -0.1)
+    # alphas = np.append(alphas, 0.05)
+    # alphas = np.append(alphas, 0.01)
+
+    # or use this if you want to run the optimal alpha value
+    alphas = [0.01]
     for alpha in alphas:
         training_trials = run(agent_type, alpha, tolerance, n_test)
         data = pd.read_csv(os.path.join("logs", "sim_improved-learning.csv"))
