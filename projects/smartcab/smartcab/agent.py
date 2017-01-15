@@ -206,12 +206,12 @@ class InformedAgent(LearningAgent):
         ## TO DO ##
         ###########
         # Calculate the maximum Q-value of all actions for a given state
+        max_action = None
         maxQ = None
-        max_reward = None
         for k,v in self.Q[state].iteritems():
-            if max_reward == None or v > max_reward:
-                max_reward = v
-                maxQ = k
+            if maxQ == None or v > maxQ:
+                maxQ = v
+                max_action = k
 
         return maxQ 
 
@@ -254,7 +254,13 @@ class InformedAgent(LearningAgent):
             if self.epsilon > n:
                 action = self.valid_actions[random.randrange(0,len(self.valid_actions))]
             else:
-                action = self.get_maxQ(state)
+                maxQ = self.get_maxQ(state)
+                possible_actions = []
+                for k,v in self.Q[state]:
+                    if v == maxQ:
+                        possible_actions.append(k)
+
+                action = random.choice(possible_actions)
  
         return action
 
