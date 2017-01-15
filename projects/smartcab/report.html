@@ -11862,7 +11862,47 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
-<p>The smartcab does not move at all. Because of this, it is collecting all the rewards where "no action" or "wait" were expected. For example, when lights are <em>red</em>, the agent is rewarded, because the simulator interprets the agent is waiting. In contrast, when lights are <em>green</em> and there is no oncoming traffic, the agent is penalized, because it didn't move when it was supposed to.</p>
+<p>The smartcab does not move at all. Because of this, it is collecting all the rewards where "no action" or "wait" were expected. The code that implements this behaviour is written below:</p>
+<div class="highlight"><pre><span></span><span class="c1"># file environment.py lines 328 through 358</span>
+
+        <span class="c1"># Agent wants to perform no action:</span>
+        <span class="k">elif</span> <span class="n">action</span> <span class="o">==</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">light</span> <span class="o">==</span> <span class="s1">&#39;green&#39;</span> <span class="ow">and</span> <span class="n">inputs</span><span class="p">[</span><span class="s1">&#39;oncoming&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;left&#39;</span><span class="p">:</span> <span class="c1"># No oncoming traffic</span>
+                <span class="n">violation</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># Minor violation</span>
+
+
+        <span class="c1"># Did the agent attempt a valid move?</span>
+        <span class="k">if</span> <span class="n">violation</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">action</span> <span class="o">==</span> <span class="n">agent</span><span class="o">.</span><span class="n">get_next_waypoint</span><span class="p">():</span> <span class="c1"># Was it the correct action?</span>
+                <span class="n">reward</span> <span class="o">+=</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">penalty</span> <span class="c1"># (2, 1)</span>
+            <span class="k">elif</span> <span class="n">action</span> <span class="o">==</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">light</span> <span class="o">!=</span> <span class="s1">&#39;green&#39;</span><span class="p">:</span> <span class="c1"># Was the agent stuck at a red light?</span>
+                <span class="n">reward</span> <span class="o">+=</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">penalty</span> <span class="c1"># (2, 1)</span>
+            <span class="k">else</span><span class="p">:</span> <span class="c1"># Valid but incorrect</span>
+                <span class="n">reward</span> <span class="o">+=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">penalty</span> <span class="c1"># (1, 0)</span>
+
+            <span class="c1"># Move the agent</span>
+            <span class="k">if</span> <span class="n">action</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="n">location</span> <span class="o">=</span> <span class="p">((</span><span class="n">location</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">heading</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bounds</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                            <span class="p">(</span><span class="n">location</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">heading</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">bounds</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bounds</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">bounds</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">bounds</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># wrap-around</span>
+                <span class="n">state</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">location</span>
+                <span class="n">state</span><span class="p">[</span><span class="s1">&#39;heading&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">heading</span>
+        <span class="c1"># Agent attempted invalid move</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">violation</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="c1"># Minor violation</span>
+                <span class="n">reward</span> <span class="o">+=</span> <span class="o">-</span><span class="mi">5</span>
+            <span class="k">elif</span> <span class="n">violation</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span> <span class="c1"># Major violation</span>
+                <span class="n">reward</span> <span class="o">+=</span> <span class="o">-</span><span class="mi">10</span>
+            <span class="k">elif</span> <span class="n">violation</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span> <span class="c1"># Minor accident</span>
+                <span class="n">reward</span> <span class="o">+=</span> <span class="o">-</span><span class="mi">20</span>
+            <span class="k">elif</span> <span class="n">violation</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span> <span class="c1"># Major accident</span>
+                <span class="n">reward</span> <span class="o">+=</span> <span class="o">-</span><span class="mi">40</span>
+</pre></div>
+<p>Given that the agent is choosing action <code>None</code>, we have 3 different cases:</p>
+<ol>
+<li><code>None</code> + <em>red lights</em> = rewards</li>
+<li><code>None</code> + <em>green lights</em> + <em>oncoming traffic turning left</em> = rewards</li>
+<li><code>None</code> + <em>green lights</em> + <em>oncoming traffic not turning left</em> = penalties</li>
+</ol>
 
 </div>
 </div>
@@ -11898,6 +11938,9 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
+<ul>
+<li><em>In the </em><code>agent.py</code><em> Python file, choose three flags that can be set and explain how they change the simulation.</em></li>
+</ul>
 <h4 id="agent.py"><em>agent.py</em><a class="anchor-link" href="#agent.py">&#182;</a></h4><p>I chose three flags that affect the Simulator object. The comments below were extracted from the source code.</p>
 
 <pre><code>update_delay - continuous time (in seconds) between actions, default is 2.0 seconds
@@ -11926,6 +11969,27 @@ div#notebook {
         <span class="s1">&#39;success&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">trial_data</span><span class="p">[</span><span class="s1">&#39;success&#39;</span><span class="p">]</span>
     <span class="p">})</span>
 </pre></div>
+<ul>
+<li><em>In the </em><code>environment.py</code><em> Python file, what Environment class function is called when an agent performs an action?</em></li>
+</ul>
+<p>When an agent performs an action, the function <code>def act(self, agent, action):</code> is called in <code>environment.py</code>.</p>
+<ul>
+<li><em>In the </em><code>simulator.py</code><em> Python file, what is the difference between the </em><code>'render_text()'</code><em> function and the </em><code>'render()'</code><em> function?</em></li>
+</ul>
+<p>From the source code, we have:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">trial</span><span class="p">,</span> <span class="n">testing</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; This is the GUI render display of the simulation. </span>
+<span class="sd">            Supplementary trial data can be found from render_text. &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">render_text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">trial</span><span class="p">,</span> <span class="n">testing</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; This is the non-GUI render display of the simulation. </span>
+<span class="sd">            Simulated trial data will be rendered in the terminal/command prompt. &quot;&quot;&quot;</span>
+</pre></div>
+<p>So <code>render_text()</code> renders display of the simulation in the command prompt, while <code>render()</code> renders display of the simulation on the PyGame window (GUI interface).</p>
+<ul>
+<li><em>In the </em><code>planner.py</code><em> Python file, will the </em><code>'next_waypoint()</code><em> function consider the North-South or East-West direction first?</em></li>
+</ul>
+<p>In the file <code>planner.py</code>, the function <code>next_waypoint()</code> considers East-West direction before North-South.</p>
 
 </div>
 </div>
@@ -13774,7 +13838,7 @@ RK5CYII=
 </tr>
 <tr>
 <td>inputs['light']</td>
-<td>red, green, yellow</td>
+<td>red, green</td>
 </tr>
 <tr>
 <td>inputs['left']</td>
@@ -13786,12 +13850,12 @@ RK5CYII=
 </tr>
 <tr>
 <td><strong>Size</strong></td>
-<td>144</td>
+<td>96</td>
 </tr>
 </tbody>
 </table>
-<p>Based on the combinations listed above, the state space size is 144. Running some simulations and analyzing the rewards on the Q-table output, I noticed that the agent seems to learn most of the rules of the US right-of-way with few trials.</p>
-<p>Also, we could sacrifice some <strong>safety</strong> to improve the overall learning by removing the <code>inputs['left']</code>. This is the best candidate to be removed, because given the features we selected, there is only 4 combinations out of 144 that requires knowing <code>inputs["left"]</code> to avoid an accident, as shown by the table below:</p>
+<p>Based on the combinations listed above, the state space size is 96. Running some simulations and analyzing the rewards on the Q-table output, I noticed that the agent seems to learn most of the rules of the US right-of-way with few trials.</p>
+<p>Also, we could sacrifice some <strong>safety</strong> to improve the overall learning by removing the <code>inputs['left']</code>. This is the best candidate to be removed, because given the features we selected, there is only 4 combinations out of 96 that requires knowing <code>inputs["left"]</code> to avoid an accident, as shown by the table below:</p>
 <table>
 <thead><tr>
 <th>waypoint</th>
@@ -13808,12 +13872,12 @@ RK5CYII=
 <td>red</td>
 <td>forward</td>
 <td>forward,left,right,None</td>
-<td>4 out 144</td>
+<td>4 out 96</td>
 <td>Accident</td>
 </tr>
 </tbody>
 </table>
-<p>Dropping <code>inputs["left"]</code> would result in a state space of 36, which is considerably smaller than 144, making the agent much more effective in learning the US right-of-way rules. So the final state space is:</p>
+<p>Dropping <code>inputs["left"]</code> would result in a state space of 24, which is considerably smaller than 96, making the agent much more effective in learning the US right-of-way rules. So the final state space is:</p>
 <table>
 <thead><tr>
 <th>Feature</th>
@@ -13827,7 +13891,7 @@ RK5CYII=
 </tr>
 <tr>
 <td>inputs['light']</td>
-<td>red, green, yellow</td>
+<td>red, green</td>
 </tr>
 <tr>
 <td>inputs['oncoming']</td>
@@ -13835,7 +13899,7 @@ RK5CYII=
 </tr>
 <tr>
 <td><strong>Size</strong></td>
-<td>36</td>
+<td>24</td>
 </tr>
 </tbody>
 </table>
@@ -18886,12 +18950,15 @@ Highest reward: right</code></pre>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
 <p>Future rewards won't work for this project, because of two characteristics.</p>
-<ol>
-<li><p>[Environment] The reward is initialized with a random value between <code>[-1, 1]</code>. This means that even if the agent followed an optimal path to the destination, respecting traffic laws, there could be multiple paths, optimal or not, that arrived at the destination, but collected higher rewards without commiting traffic violations. With future reward in place, this randomness could increase even more, making it harder for the agent to learn anything.</p>
-</li>
-<li><p>[Agent] The agent has to learn both how to drive safely (respecting traffic laws) and how to reach its destination in time (following waypoints). With future rewards in place, it would be harder for the agent to learn both of these features, because the rewards would bias the agent either way: driving in circles while respecting traffic laws, to collect most rewards from safety, or drive straight to the destination, following all waypoints and disregarding traffic laws.</p>
-</li>
-</ol>
+<ul>
+<li>[Agent] The agent sensors can't predict future states correctly. </li>
+</ul>
+<p>For example, to correctly predict which path would result in the better reward, the agent would have to know that it has to turn left <em>then</em> turn right <em>then</em> go forward. With its current sensors, it doesn't have access to where the destination is, but only the next waypoint.</p>
+<ul>
+<li>[Environment] The environment is ever changing, with lights changing and other agents moving around.</li>
+</ul>
+<p>For example, even if the agent knew where the destination was, it is not capable of knowing when a light will turn green or red, and where the other cars will be when it takes an action.</p>
+<p>Also, because destinations are randomly chosen through the grid, there won't be an optimal policy, using future rewards, that covers all of them, because for each destination, there will be different paths that yield the best rewards.</p>
 
 </div>
 </div>
