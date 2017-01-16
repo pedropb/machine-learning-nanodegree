@@ -18913,11 +18913,17 @@ Highest reward: right</code></pre>
 <div class="highlight"><pre><span></span><span class="mi">315</span>                <span class="k">if</span> <span class="n">inputs</span><span class="p">[</span><span class="s1">&#39;oncoming&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;right&#39;</span> <span class="ow">or</span> <span class="n">inputs</span><span class="p">[</span><span class="s1">&#39;oncoming&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;forward&#39;</span><span class="p">:</span> <span class="c1"># Incoming traffic</span>
 </pre></div>
 <p>This explains why <code>left</code> is negative on the Q-table: <strong>it would cause an accident and the agent is heavily penalized (-20 reward)</strong>.</p>
-<p>What is interesting is that <code>None</code>, <code>right</code> or <code>forward</code> fall into the same category. All of these actions will not follow the waypoint and will not cause an accident, yet they are valid moves. Line 341 shows the reward the agent gets on these cases:</p>
+<p>In contrast, <code>right</code> or <code>forward</code> fall into the same category of rewards. <strong>They will not follow the waypoint and will not cause an accident, but they are valid moves.</strong> Line 341 shows the reward the agent gets on these cases:</p>
 <div class="highlight"><pre><span></span><span class="mi">340</span>            <span class="k">else</span><span class="p">:</span> <span class="c1"># Valid but incorrect</span>
 <span class="mi">341</span>                <span class="n">reward</span> <span class="o">+=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">penalty</span> <span class="c1"># (1, 0)</span>
 </pre></div>
-<p>That explains why <code>right</code> and <code>forward</code> have positive reward values, while <code>None</code> has a negative value. The reasoning is that, because the reward system treats all these cases the same way (i.e <em>valid but incorrect</em>), they will receive some random reward given by: <code>reward = [-1, 1] + 1 - (0 or 1)</code>, which could be any value on the interval <code>[-1, 2]</code>.</p>
+<p>And what is most interesting is that, what I expected to be the optimal action (<code>None</code>), <strong>is penalized by the reward system as a minor violation</strong>:</p>
+<div class="highlight"><pre><span></span><span class="mi">328</span>     <span class="c1"># Agent wants to perform no action:</span>
+<span class="mi">329</span>     <span class="k">elif</span> <span class="n">action</span> <span class="o">==</span> <span class="bp">None</span><span class="p">:</span>
+<span class="mi">330</span>         <span class="k">if</span> <span class="n">light</span> <span class="o">==</span> <span class="s1">&#39;green&#39;</span> <span class="ow">and</span> <span class="n">inputs</span><span class="p">[</span><span class="s1">&#39;oncoming&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;left&#39;</span><span class="p">:</span> <span class="c1"># No oncoming traffic</span>
+<span class="mi">331</span>             <span class="n">violation</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># Minor violation</span>
+</pre></div>
+<p>That explains why <code>right</code> and <code>forward</code> have positive reward values, while <code>None</code> has a negative value.</p>
 
 </div>
 </div>
