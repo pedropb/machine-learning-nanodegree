@@ -26,7 +26,8 @@ This repo stores all my class notes, exercises and projects for [Udacity's Machi
     1. [Markov Decision Process](classes/reinforcement-learning/markov-decision-process.md)
     2. [Reinforcement Learning](classes/reinforcement-learning/reinforcement-learning.md)
     3. [Game Theory](classes/reinforcement-learning/game-theory.md)
-6. Deep Learning
+6. [Deep Learning](classes/deep-learning/from-machine-learning-to-deep-learning.md)
+    1. [From Machine Learning to Deep Learning](classes/deep-learning/from-machine-learning-to-deep-learning.md)
 7. Machine Learning Specializations
 
 ## Projects
