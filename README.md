@@ -4,7 +4,7 @@ This repo stores all my class notes, exercises and projects for [Udacity's Machi
 
 ## Class Notes
 
-1. [Welcome to the Nanodegree](classes/welcome-to-the-nano-degree/notes/welcome-to-the-mlnd-program.md))
+1. [Welcome to the Nanodegree](classes/welcome-to-the-nano-degree/notes/welcome-to-the-mlnd-program.md)
     1. [Welcome to the Machine Learning Nanodegree Program](classes/welcome-to-the-nano-degree/notes/welcome-to-the-mlnd-program.md)
     2. [What is Machine Learning](classes/welcome-to-the-nano-degree/notes/what-is-machine-learning.md)
 2. [Model Evaluation and Validation](classes/model-evaluation-and-validation/evaluation-and-validation.md)
@@ -41,4 +41,3 @@ This repo stores all my class notes, exercises and projects for [Udacity's Machi
 ## Extra
 
 - [Statistics Cheatsheet](statistics/cheatsheet.md)
-- [License](LICENSE)
