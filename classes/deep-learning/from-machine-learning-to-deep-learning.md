@@ -13,3 +13,13 @@ When we train a classifier, we want to output probabilities, instead of scores. 
 To transform scores into probabilities we can use a softmax function as described below.
 
 ![Softmax Function](images/softmax.png)
+
+## Cross Entropy
+
+![One Hot Encoding Problem](images/cross-entropy-intro.png)
+
+![Cross Entropy Definition](images/cross-entropy-definition.png)
+
+![Multinomial Logistic Classification Recap](images/multinomial-logistic-classification-recap.png)
+
+![Multinomial  Logistic Classification](images/multinomial-logistic-classification.png)
