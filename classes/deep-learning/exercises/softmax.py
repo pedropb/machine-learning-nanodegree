@@ -37,11 +37,21 @@ test_1()
 
 test_2()
 
-# Plot softmax curves
-import matplotlib.pyplot as plt
-x = np.arange(-2.0, 6.0, 0.1)
-scores = np.vstack([x, np.ones_like(x), 0.2 * np.ones_like(x)])
+def plot_graph():
+    # Plot softmax curves
+    import matplotlib.pyplot as plt
+    x = np.arange(-2.0, 6.0, 0.1)
+    scores = np.vstack([x, np.ones_like(x), 0.2 * np.ones_like(x)])
 
-plt.plot(x, softmax(scores).T, linewidth=2)
-plt.show()
+    plt.plot(x, softmax(scores).T, linewidth=2)
+    plt.show()
 
+def scaling_scores():
+    scores = np.array([1.0, 2.0, 3.0])
+    print scores, softmax(scores)
+    
+    print softmax(scores * 10)
+
+    print softmax(scores / 10)
+
+scaling_scores()
