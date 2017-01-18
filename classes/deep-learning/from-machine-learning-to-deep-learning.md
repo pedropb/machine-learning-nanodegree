@@ -12,4 +12,4 @@ When we train a classifier, we want to output probabilities, instead of scores. 
 
 To transform scores into probabilities we can use a softmax function as described below.
 
-![Softmax Function](images/softmax-function.png)
+![Softmax Function](images/softmax.png)
