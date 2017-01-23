@@ -67,3 +67,19 @@ So now we know all steps for initializing the Logistic Classifier.
 And the optimization steps consist of taking the derivative of the loss function on each weight and updating the weight to its new value, hence and repeat.
 
 ![optimization steps](images/optimization-steps.png)
+
+## Validation Test Set Size Continued
+
+As a rule of the thumb, a change in the model that affects the classification of less than 30 samples can be interpreted as noise. In contrast, a change that affects 30 or more samples, can be interpreted as a gain in accuracy for the model. Because of this, a validation set should have at least 30,000 samples, so that we can measure gains of 0.1% in accuracy.
+
+![Validation Test Set Size](images/validation-test-size.png)
+
+## Stochastic Gradient Descent
+
+Stochastic Gradient Descent is an alternative to Gradient Descent. It is a trade-off in in which we select a tiny random sample from the dataset to compute the global loss function and the derivative faster and, instead of taking tens of large steps to find the minimum optiaml function, we take hunderds to thousands smaller steps.
+
+ ![Gradient Descent](images/gd-vs-sgd-1.png)
+
+ ![Stochastic Gradient Descent](images/gd-vs-sgd-2.png)
+
+ Usually we prefer SGD to GD, because it scales better with model and data size, and we want both on deep learning.
