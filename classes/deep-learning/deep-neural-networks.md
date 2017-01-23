@@ -1,5 +1,7 @@
 # Deep Neural Networks
 
+## Linear Model Benefits
+
 Linear models provide various benefits:
 
 ![Linear Model Complexity](images/deep-neural-networks/linear-model-complexity.png)
@@ -18,6 +20,8 @@ So we want to keep using linear models. But we need to introduce some non-linear
 
 ![Linear Models are here to stay](images/deep-neural-networks/linear-models-stay-2.png)
 
+## RELUs
+
 The easiest way to introduce non-linearities is to use the Rectified Linear Unit functions (RELU).
 
 ![RELU](images/deep-neural-networks/relus.png)
@@ -25,6 +29,8 @@ The easiest way to introduce non-linearities is to use the Rectified Linear Unit
 And the derivative from this function is also easy to compute.
 
 ![RELU Derivative](images/deep-neural-networks/relus-derivative.png)
+
+## Linear Models + RELUs = Neural Networks
 
 So using RELUs, we can introduce non-linearities into our model and build our first neural network.
 
@@ -36,7 +42,7 @@ But where are the neurons?
 
 In this class, we won't make analogies to the biological neuroscience side of neural networks. Instead, we will focus on the math behind it, and how we can use GPUs to make them work with little effort as possible.
 
-## Neural Networks
+## 2-Layer Neural Networks
 
 ![2-layer neural network](images/deep-neural-networks/2-layer-neural-network.png)
 
@@ -44,3 +50,13 @@ In this class, we won't make analogies to the biological neuroscience side of ne
 
 1. The first layer effectively consists of the set of weights and biases applied to X and passed through ReLUs. The output of this layer is fed to the next one, but is not observable outside the network, hence it is known as a *hidden layer*.
 2. The second layer consists of the weights and biases applied to these intermediate outputs, followed by the softmax function to generate probabilities.
+
+## Chain Rule
+
+The advantages of using simple linear operations to build neural networks is that it makes it easy to compute the derivatives due to the `chain rule`. This also makes it easy for a deep learning framework to manage and promotes data reuse for further computational optimization.
+
+![Simple Linear Operations](images/deep-neural-networks/simple-operations.png)
+
+![Chain Rule](images/deep-neural-networks/chain-rule.png)
+
+![Graphical Chain Rule](images/deep-neural-networks/graphical-chain-rule.png)
