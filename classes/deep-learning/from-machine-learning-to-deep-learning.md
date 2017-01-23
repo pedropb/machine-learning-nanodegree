@@ -82,4 +82,4 @@ Stochastic Gradient Descent is an alternative to Gradient Descent. It is a trade
 
  ![Stochastic Gradient Descent](images/gd-vs-sgd-2.png)
 
- Usually we prefer SGD to GD, because it scales better with model and data size, and we want both on deep learning.
+ Usually we prefer SGD to GD, because it scales better with model and data size, and we want both on deep learning. The drawback is that SGD have some issues on real-world problems, like the definition of the random sample, and the steps sometimes incrase the overall loss function.
