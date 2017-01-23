@@ -78,8 +78,48 @@ As a rule of the thumb, a change in the model that affects the classification of
 
 Stochastic Gradient Descent is an alternative to Gradient Descent. It is a trade-off in in which we select a tiny random sample from the dataset to compute the global loss function and the derivative faster and, instead of taking tens of large steps to find the minimum optiaml function, we take hunderds to thousands smaller steps.
 
- ![Gradient Descent](images/gd-vs-sgd-1.png)
+![Gradient Descent](images/gd-vs-sgd-1.png)
 
- ![Stochastic Gradient Descent](images/gd-vs-sgd-2.png)
+![Stochastic Gradient Descent](images/gd-vs-sgd-2.png)
 
- Usually we prefer SGD to GD, because it scales better with model and data size, and we want both on deep learning. The drawback is that SGD have some issues on real-world problems, like the definition of the random sample, and the steps take us into random directions which, sometimes, increase the overall loss.
+Usually we prefer SGD to GD, because it scales better with model and data size, and we want both on deep learning. The drawback is that SGD have some issues on real-world problems, like the definition of the random sample, and the steps take us into random directions which, sometimes, increase the overall loss.
+
+## Momentum And Learning Rate Decay
+
+To improve SGD results, we need to take a few steps.
+
+First, as stated before, we need to normalize our inputs.
+
+![Helping SGD](images/helping-sgd.png)
+
+Then we can use `Momentum` and `Learning Rate Decay` to improve convergence.
+
+### Momentum
+
+Momentum is a moving average of the derivatives from the last steps. With momentum, we retain previous knowledge about the direction in which we have to go to get to the minimal loss function. We use momentum instead of the flat value of the derivative on a given step.
+
+![Momentum SGD](images/momentum-sgd.png)
+
+### Learning Rate Decay
+
+Learning Rate is the fraction of the derivative we take each step. Learning Rate decay is the amount the learning rate drops each step we take. As a general rule of the thumb, lowering the learning rate over time is key to convergence of the model.
+
+![Learning Rate Decay SGD](images/learning-rate-decay-sgd.png)
+
+## Parameter Hyperspace
+
+Learning Rate tuning can be very strange. A higher learning rate doesn't mean the model learns more or learns faster. That is not true. In general, a lower learning rate generates better models.
+
+![Learning Rate Tuning](images/learning-rate-tuning.png)
+
+SGD tuning is known as black-magic, because there are many hyperparameters to work with.
+
+![SGD Black Magic](images/sgd-black-magic.png)
+
+There is a simplification of SGD called ADAGRAD, which works out the learning rate and momentum. Usually it doesn't work so well as a handpicked tuned SGD, but it is much simpler to work with.
+
+![ADAGRAD](images/adagrad.png)
+
+Although we have seen how to train a Logistic Regression SGD model, it is still a linear model, which might not be the best solution for non-linear problems. Because of this, we need to go deeper into deep learning.
+
+![Recap](images/recap-deeper.png)
