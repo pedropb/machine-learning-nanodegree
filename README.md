@@ -28,6 +28,7 @@ This repo stores all my class notes, exercises and projects for [Udacity's Machi
     3. [Game Theory](classes/reinforcement-learning/game-theory.md)
 6. [Deep Learning](classes/deep-learning/from-machine-learning-to-deep-learning.md)
     1. [From Machine Learning to Deep Learning](classes/deep-learning/from-machine-learning-to-deep-learning.md)
+    2. [Deep Neural Networks](classes/deep-learning/deep-neural-networks.md)
 7. Machine Learning Specializations
 
 ## Projects
