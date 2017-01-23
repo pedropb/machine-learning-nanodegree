@@ -25,3 +25,11 @@ The easiest way to introduce non-linearities is to use the Rectified Linear Unit
 And the derivative from this function is also easy to compute.
 
 ![RELU Derivative](images/deep-neural-networks/relus-derivative.png)
+
+So using RELUs, we can introduce non-linearities into our model and build our first neural network.
+
+![Neural Network with RELUs](images/deep-neural-networks/neural-network-relus.png)
+
+But where are the neurons?
+
+![Neural Network Question](images/deep-neural-networks/neural-network-question.png)
