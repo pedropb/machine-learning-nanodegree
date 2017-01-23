@@ -33,3 +33,14 @@ So using RELUs, we can introduce non-linearities into our model and build our fi
 But where are the neurons?
 
 ![Neural Network Question](images/deep-neural-networks/neural-network-question.png)
+
+In this class, we won't make analogies to the biological neuroscience side of neural networks. Instead, we will focus on the math behind it, and how we can use GPUs to make them work with little effort as possible.
+
+## Neural Networks
+
+![2-layer neural network](images/deep-neural-networks/2-layer-neural-network.png)
+
+**Note**: Depicted above is a "2-layer" neural network:
+
+1. The first layer effectively consists of the set of weights and biases applied to X and passed through ReLUs. The output of this layer is fed to the next one, but is not observable outside the network, hence it is known as a *hidden layer*.
+2. The second layer consists of the weights and biases applied to these intermediate outputs, followed by the softmax function to generate probabilities.
