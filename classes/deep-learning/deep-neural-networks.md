@@ -60,3 +60,9 @@ The advantages of using simple linear operations to build neural networks is tha
 ![Chain Rule](images/deep-neural-networks/chain-rule.png)
 
 ![Graphical Chain Rule](images/deep-neural-networks/graphical-chain-rule.png)
+
+## Back-propagation
+
+Optimization of the model consists in running forward-propagation and then back-propagation to retrieve gradients for the weights. We then update the weights and run the process again a large number of times, until the model is optimized. It is good to note that the back-propagation step often takes twice the memory and the time to compute as the forward-propagation steps.
+
+![Back-propagation](images/deep-neural-networks/back-propagation.png)
