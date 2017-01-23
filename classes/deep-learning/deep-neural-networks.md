@@ -17,3 +17,11 @@ So we want to keep using linear models. But we need to introduce some non-linear
 ![Linear Models are here to stay](images/deep-neural-networks/linear-models-stay.png)
 
 ![Linear Models are here to stay](images/deep-neural-networks/linear-models-stay-2.png)
+
+The easiest way to introduce non-linearities is to use the Rectified Linear Unit functions (RELU).
+
+![RELU](images/deep-neural-networks/relus.png)
+
+And the derivative from this function is also easy to compute.
+
+![RELU Derivative](images/deep-neural-networks/relus-derivative.png)
