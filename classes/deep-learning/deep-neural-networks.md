@@ -84,3 +84,31 @@ Another advantage is that a lot of natural phenomena tend to have a hierarchical
 Finally, we add more layers by stacking RELUs and `WX + b` operations.
 
 ![Adding Hidden Layers](images/deep-neural-networks/adding-hidden-layers.png)
+
+## Early Termination
+
+Early termination is a technique to prevent overfitting.
+
+It consists of interrupting the training process when we stop gaining performance on the validation set.
+
+![Early Termination](images/deep-neural-networks/early-termination.png)
+
+## Regularization
+
+Regularization is another technique to prevent overfitting on neural networks.
+
+It consists of setting some boundaries in which the weights can be modified.
+
+![Regularization](images/deep-neural-networks/regularization.png)
+
+As an analogy, we can understand regularization as a Stretch vs Skinny Jeans. Skinny Jeans would mean overfitting. Because we don't want to overfit, we set a constraint to leave more "space" for the weights.
+
+![Regularization skinny jeans](images/deep-neural-networks/regularization-skinny-jeans.png)
+
+In machine learning, regularization is implemented using L2 Regularization.
+
+It consists of adding a term to the loss function, which penalizes large weights. And it introduces another hyperparameter.
+
+It is also good to note that its cheap to compute the derivative of this new term, meaning it doesn't incrase the cost of the computation of the derivative of the loss function.
+
+![Regularization loss function](images/deep-neural-networks/regularization-loss-function.png)
