@@ -76,7 +76,7 @@ As a rule of the thumb, a change in the model that affects the classification of
 
 ## Stochastic Gradient Descent
 
-Stochastic Gradient Descent is an alternative to Gradient Descent. It is a trade-off in in which we select a tiny random sample from the dataset to compute the global loss function and the derivative faster and, instead of taking tens of large steps to find the minimum optiaml function, we take hunderds to thousands smaller steps.
+Stochastic Gradient Descent is an alternative to Gradient Descent. It is a trade-off in in which we select a tiny random sample from the dataset to compute the global loss function and the derivative faster and, instead of taking tens of large steps to find the minimum optimal function, we take hunderds to thousands smaller steps.
 
 ![Gradient Descent](images/from-ml-to-dl/gd-vs-sgd-1.png)
 
