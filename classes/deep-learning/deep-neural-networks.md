@@ -66,3 +66,21 @@ The advantages of using simple linear operations to build neural networks is tha
 Optimization of the model consists in running forward-propagation and then back-propagation to retrieve gradients for the weights. We then update the weights and run the process again a large number of times, until the model is optimized. It is good to note that the back-propagation step often takes twice the memory and the time to compute as the forward-propagation steps.
 
 ![Back-propagation](images/deep-neural-networks/back-propagation.png)
+
+## Training a Deep Neural Network
+
+When training a neural network, we can choose to add more nodes or add more layers. Below is a 2-layer neural network with 1 hidden layer, which is not very deep yet.
+
+![Not very deep neural network](images/deep-neural-networks/not-very-deep-2-layer-nn.png)
+
+Usually, it is better to add more layers (go deeper) than add more nodes (go wider), because of parameter efficiency.
+
+![Wider vs Deeper](images/deep-neural-networks/wider-vs-deeper-nn.png)
+
+Another advantage is that a lot of natural phenomena tend to have a hierarchical structure, which deep models capture.
+
+![Neural Network Features](images/deep-neural-networks/nn-features.png)
+
+Finally, we add more layers by stacking RELUs and `WX + b` operations.
+
+![Adding Hidden Layers](images/deep-neural-networks/adding-hidden-layers.png)
