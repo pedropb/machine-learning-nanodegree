@@ -109,6 +109,8 @@ In machine learning, regularization is implemented using L2 Regularization.
 
 It consists of adding a term to the loss function, which penalizes large weights. And it introduces another hyperparameter.
 
+![Regularization loss function](images/deep-neural-networks/regularization-loss-function.png)
+
 It is also good to note that its cheap to compute the derivative of this new term, meaning it doesn't incrase the cost of the computation of the derivative of the loss function.
 
-![Regularization loss function](images/deep-neural-networks/regularization-loss-function.png)
+![Regularization loss function](images/deep-neural-networks/regularization-derivative.png)
