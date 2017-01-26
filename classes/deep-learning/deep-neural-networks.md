@@ -114,3 +114,27 @@ It consists of adding a term to the loss function, which penalizes large weights
 It is also good to note that its cheap to compute the derivative of this new term, meaning it doesn't incrase the cost of the computation of the derivative of the loss function.
 
 ![Regularization loss function](images/deep-neural-networks/regularization-derivative.png)
+
+## Dropout
+
+Dropout is a recent technique that also prevents overfitting and improve the overall result of the neural network, in the same way an ensemble model work.
+
+It consists of randomly dropping data flows through the nodes of the neural network.
+
+![Dropout Intro](images/deep-neural-networks/dropout-intro.png)
+
+This way, the neural network is forced to learn redundant representations of the data.
+
+![Dropout Redundant](images/deep-neural-networks/dropout-redundant.png)
+
+If dropout doesn't improve a neural network, it maybe wise to incrase the number of nodes.
+
+![Dropout Exmaple](images/deep-neural-networks/dropout-example.png)
+
+Like an ensemble model, when we evaluate the model, we don't want to deal with the randomness of the dropout affecting the activations. Because of this, we scale the activations that were not affected by 2 and take the average.
+
+![Dropout Scale](images/deep-neural-networks/dropout-scale.png)
+
+And when it is time to evaluate the network, we remove the dropouts and the scale, and we'll have the same average.
+
+![Dropout Average](images/deep-neural-networks/dropout-average.png)
