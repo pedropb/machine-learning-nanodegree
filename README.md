@@ -29,6 +29,7 @@ This repo stores all my class notes, exercises and projects for [Udacity's Machi
 6. [Deep Learning](classes/deep-learning/from-machine-learning-to-deep-learning.md)
     1. [From Machine Learning to Deep Learning](classes/deep-learning/from-machine-learning-to-deep-learning.md)
     2. [Deep Neural Networks](classes/deep-learning/deep-neural-networks.md)
+    3. [Convolutional Neural Networks](classes/deep-learning/convolutional-neural-networks.md)
 7. Machine Learning Specializations
 
 ## Projects
