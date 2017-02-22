@@ -80,3 +80,20 @@ Some famous CNN Architecture consist of 2 convolution layers interleaved with 2 
 Besides Max Pooling, average pooling is also another useful pooling technique, which provides a blurred version of the image as an output.
 
 ![Average pooling](images/cnns/average-pooling.png)
+
+## 1x1 Convolutions
+
+At first, it might sound strange to make 1x1 convolutions. The whole idea behind CNNs is to take advantage of context and proximity of the pixels information to classify the data.
+
+The idea of using 1x1 convolutions is to create deep layers of convolutions, by applying a 1x1 convolution after a regular convolution. This is equivalent to a matrix multiply operation over the result of the first convolution and it introduces more parameters to be tuned by the network, deepening the network.
+
+Also, this is a pre-requisite for an advanced architecture of CNNs that is being used more frequently nowadays. This architecture is called Inception Module.
+
+![1x1 Convolutions](images/cnns/1-1-convolutions.png)
+
+## Inception Module
+
+The Inception module architecture is a way to add more parameters to a ConvNet without compromising the cost of training, comparing to adding another convolutional layer. It consists of stacking pooling and convolutional layers with different sizes and then concatenating all of their outputs. The advantage of this module is that we can choose the parameters in a way that we keep the number of parameters very small, while performing better than with a single convolutional layer.
+
+![Inception Module](images/cnns/inception-module.png)
+
