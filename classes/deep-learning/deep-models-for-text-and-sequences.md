@@ -28,3 +28,22 @@ To learn about the context of a word, we'll model the words using embeddings. Em
 
 ![embeddings](images/dmft/embeddings.png)
 
+## Word2vec
+
+Word2vec is a simple model that works surprisingly well. As an example, we take a sentence, and create an embedding for each word in it. Initially a random one. Then we train the model, using a Logistic Classifier and the words inside a window around the original word.
+
+![word2vec intro](images/dmft/word2vec-intro.png)
+
+There are 2 details about word2vec:
+
+- when comparing embeddings, we should use cosine distance and unitary norms, because the length of the embedding vector is irrelevant for the comparison purpose.
+
+![comparing embeddings](images/dmft/comparing-embeddings.png)
+
+- when training, instead of comparing the softmax vector to the possible words, instead of using the full corpus vocabulary, we can sample it and select, along with the target, some other words that are not the target. This doesn't impact the accuracy of the model, but greatly increase its performance.
+
+![word2vec detail](images/dmft/word2vec-detail.png)
+
+Finally, as a side-note, to visualize the embeddings vectors, we should use t-SNE instead of PCA, for dimensionality reduction. That is, because t-SNE preserves the similarity and distance between vectors, while PCA could deform this.
+
+
