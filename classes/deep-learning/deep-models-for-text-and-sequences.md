@@ -24,7 +24,7 @@ Take for example the phrases:
 
 *Cat* can be replaced by any cat-like entity. For instance, *kitty* would provide the same meaning on the sentences. So if a model is successful in understanding that cat and kitty can both be used on these sentences, we can say that the model has learned the meaning of cat and kitty on this context.
 
-To learn about the context of a word, we'll model the words using embeddings. Embeddings are small vectors that map words with similar meaning into similar places in a word-space dimension.
+To learn about the context of a word, we'll model the words using embeddings. Embeddings are small vectors that map words with similar meaning into similar vectors in a word-space dimension.
 
 ![embeddings](images/dmft/embeddings.png)
 
