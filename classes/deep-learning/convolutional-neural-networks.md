@@ -95,5 +95,5 @@ Also, this is a pre-requisite for an advanced architecture of CNNs that is being
 
 The Inception module architecture is a way to add more parameters to a ConvNet without compromising the cost of training, comparing to adding another convolutional layer. It consists of stacking pooling and convolutional layers with different sizes and then concatenating all of their outputs. The advantage of this module is that we can choose the parameters in a way that we keep the number of parameters very small, while performing better than with a single convolutional layer.
 
-![Inception Module](images/cnns/inception-module.png)
+![Inception Module](images/cnns/inception-modules.png)
 
