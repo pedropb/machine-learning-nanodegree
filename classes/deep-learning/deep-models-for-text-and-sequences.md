@@ -40,10 +40,10 @@ There are 2 details about word2vec:
 
 ![comparing embeddings](images/dmft/comparing-embeddings.png)
 
-- when training, instead of comparing the softmax vector to the possible words, instead of using the full corpus vocabulary, we can sample it and select, along with the target, some other words that are not the target. This doesn't impact the accuracy of the model, but greatly increase its performance.
+- when training, instead of comparing the softmax vector to the full corpus vocabulary, we can sample it and select, along with the target, some other words that are not the target. This doesn't impact the accuracy of the model, but greatly increase its performance.
 
 ![word2vec detail](images/dmft/word2vec-detail.png)
 
-Finally, as a side-note, to visualize the embeddings vectors, we should use t-SNE instead of PCA, for dimensionality reduction. That is, because t-SNE preserves the similarity and distance between vectors, while PCA could deform this.
+Finally, as a side-note, to visualize the embeddings vectors, we should use t-SNE instead of PCA, for dimensionality reduction. That is, because t-SNE preserves the similarity and distance between vectors, while PCA could deform it.
 
 
