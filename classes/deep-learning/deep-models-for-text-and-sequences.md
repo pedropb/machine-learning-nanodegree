@@ -47,3 +47,34 @@ There are 2 details about word2vec:
 Finally, as a side-note, to visualize the embeddings vectors, we should use t-SNE instead of PCA, for dimensionality reduction. That is, because t-SNE preserves the similarity and distance between vectors, while PCA could deform it.
 
 
+## Sequences of Varying Length
+
+So far we have seen only inputs with fixed size. This makes it easy to turn inputs into vectors and feed them to a Neural Network. The problem is that in the real world, texts (and speech) don't have a fixed number of words, but instead a varying number of words. To solve this problem, we will use Recurrent Neural Networks.
+
+## Recurrent Neural Networks
+
+While CNNs use shared parameters to extract patterns in space (2D, 3D, etc.), Recurrent Neural Networks (or RNNs for short) use a similar approach but over time, instead of space.
+
+![RNN vs CNN](images/rnns/rnn-vs-cnn.png)
+
+So the general idea for working with text, is that we want to take inputs from events in time, and classify them as they come.
+
+![RNN Intro](images/rnns/rnn-intro.png)
+
+If the sequence is reasonably [stationary](https://en.wikipedia.org/wiki/Stationary_sequence), we can simplify things and use the same model (with the same weights) for all incoming events.
+
+![RNN stationary](images/rnns/rnn-stationary.png)
+
+But because we are working with a sequence of text, we want to take into account the previous events, while evaluating future events, so our model has a better understanding of the context of the words. This can be achieved by feeding previous events recurrently to all future classifications.
+
+![RNN past](images/rnns/rnn-past.png)
+
+To achieve better performance, a better approach is to use the state of the previous classifier recursively as a summary of what happened before.
+
+![RNN past model](images/rnns/rnn-past-model.png)
+
+The problem this approach introduces is that for some large sequence of text, we would require a very deep neural network to hold the state of all previous events. To solve this problem, we use tying again, and only keep the state of the previous model.
+
+![RNN final](images/rnns/rnn-final.png)
+
+This final architecture is pretty simple. We have our network connecting to each input in time, and a recurrent connection connecting our network with its previous state, to summarize the context of our sequence of inputs.
