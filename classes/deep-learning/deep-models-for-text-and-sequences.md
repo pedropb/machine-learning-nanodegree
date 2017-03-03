@@ -113,3 +113,12 @@ This is where LSTM (Long short-term memory) comes in. LSTM solves the vanishing 
 
 ![LSTM Cell](images/rnns/lstm.png)
 
+## Memory Cell
+
+To understand how LSTM works, we need to conceptualize what is a memory machine. A memory machine is basically a virtual space where we can store information (write), retrieve this information (read) and that sometimes empties itself if not used too often (forget).
+
+![Simple Memory](images/rnns/simple-memory.png)
+
+This same concept can be drawn in a diagram like below.
+
+![Memory Diagram](images/rnns/memory-diagram.png)
