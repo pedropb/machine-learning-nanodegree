@@ -142,3 +142,21 @@ Finally, we can use L2 regularization just as in any Neural Network.
 We can also use dropouts, but only in the inputs and outputs. Never on the recurrent connections,
 
 ![LSTM Regularization](images/rnns/lstm-regularization.png)
+
+## Beam Search
+
+So now that we have built a RNN, what is it good for??
+
+One good example is using RNNs to predict a sequence of text, given some previous words or characters.
+
+![RNN Application](images/rnns/rnn-application.png)
+
+To make these predictions, we could feed all events into a RNN to predict the next character and then, recursively, sample the letter or word with highest probability, feed it back to the RNN as a new event, and predict again, and so on.
+
+![Prediction and Sample cycle](images/rnns/rnn-pred-sample.png)
+
+This is a greedy approach. We can improve the overall result by selecting more than 1 result to feed back into the RNN. This grows exponentially, but we have the benefit of not falling into local optima and evaluating more hypothesis.
+
+![Multiple Predictions](images/rnns/multiple-predictions.png)
+
+Finally, we can do what is called a `beam search` and prune the tree of possibilities by removing all predictions with probabilities that fall below some threshold and keeping only good candidates.
