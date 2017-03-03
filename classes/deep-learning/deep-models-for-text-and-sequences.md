@@ -92,3 +92,24 @@ To compute all the weights of the network, we would need to backpropagate throug
 These correlated updates causes 2 problems:
 - Exploding gradients: when the derivatives get too big too fast, causing the gradient to explode into infinity.
 - Vanishing gradients: when the derivatives get too small too fast, causing the gradient to vanish into zero.
+
+We are going to solve these 2 problems in very different ways.
+
+## Exploding Gradient Solution
+
+To fix the exploding gradient problem, we use a hack that is very effective and cheap: *gradient clipping*. In order to prevent the gradient from growing unbounded, we can compute its norm, and shrink the update step when the norm grows too big.
+
+![Gradient Clipping](images/rnns/exploding-gradient-solution.png)
+
+## Vanishing Gradient Problem Explained
+
+The vanishing gradient problem is more difficult to fix. This problem makes our model remember only the recent events and forget about the distant past. This makes our RNNs not work well after a few time steps.
+
+![Vanishing Gradient Problem Explained](images/rnns/vanishing-gradient-problem-explained.png)
+
+## LSTM
+
+This is where LSTM (Long short-term memory) comes in. LSTM solves the vanishing gradient problem, by replacing our recurrent connections with a very simple machine that prevents this memory loss.
+
+![LSTM Cell](images/rnns/lstm.png)
+
