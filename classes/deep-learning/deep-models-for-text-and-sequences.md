@@ -160,3 +160,39 @@ This is a greedy approach. We can improve the overall result by selecting more t
 ![Multiple Predictions](images/rnns/multiple-predictions.png)
 
 Finally, we can do what is called a `beam search` and prune the tree of possibilities by removing all predictions with probabilities that fall below some threshold and keeping only good candidates.
+
+## RNN Applications
+
+Using RNNs and LSTMs we can achieve various results.
+
+For instance, with RNN we can take a varying number of inputs and output a fixed width vector.
+
+![](images/rnns/rnn-output-fixed-vector.png)
+
+We can also take a fixed width input and output a sequence with variable length.
+
+![](images/rnns/rnn-ouput-variable-length.png)
+
+We can plug both of these architectures and take variable length of sequences as inputs and outputs, so that we can work with any type of data.
+
+![](images/rnns/rnn-input-output-variable.png)
+
+With variable length inputs and outputs, we can build:
+
+- a machine translation system
+
+![](images/rnns/machine-translation.png)
+
+- a speech recognition system
+
+![](images/rnns/speech-recognition.png)
+
+Using ConvNets together with RNNs, we can take images as input and build a image captioning system for example.
+
+![](images/rnns/image-captioning.png)
+
+There is even a image captioning dataset [publicly available](http://mscoco.org) to train on.
+
+![](images/rnns/image-captioning-dataset.png)
+
+Basically, we can play "LEGOs" with all of these components to work with data of various formats and build many classifiers.
