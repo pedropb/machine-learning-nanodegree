@@ -78,3 +78,17 @@ The problem this approach introduces is that for some large sequence of text, we
 ![RNN final](images/rnns/rnn-final.png)
 
 This final architecture is pretty simple. We have our network connecting to each input in time, and a recurrent connection connecting our network with its previous state, to summarize the context of our sequence of inputs.
+
+## Backpropagation through time
+
+With the current architecture proposed to RNNs, we still have some problems.
+
+![Backpropagation through time](images/rnns/backprop-time.png)
+
+To compute all the weights of the network, we would need to backpropagate through time. This means that we would have to compute the derivatives of all the weights used recurrently throughout all events. This is bad for SGD because it produces correlated updates, while SGD expects uncorrelated updates.
+
+![Backpropagation through time problems](images/rnns/backprop-time-problem.png)
+
+These correlated updates causes 2 problems:
+- Exploding gradients: when the derivatives get too big too fast, causing the gradient to explode into infinity.
+- Vanishing gradients: when the derivatives get too small too fast, causing the gradient to vanish into zero.
