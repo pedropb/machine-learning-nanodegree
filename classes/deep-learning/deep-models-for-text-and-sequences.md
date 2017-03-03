@@ -135,3 +135,10 @@ In a detailed view, LSTM cell introduces 3 new hyperparameters, for each of the 
 
 The introduction of these 3 new gates is what allow our model to keep the memory longer when it needs to and ignore things when it should. As a result, the optimization is much easier and the gradient vanishing problem disappears.
 
+## LSTM Regularization
+
+Finally, we can use L2 regularization just as in any Neural Network.
+
+We can also use dropouts, but only in the inputs and outputs. Never on the recurrent connections,
+
+![LSTM Regularization](images/rnns/lstm-regularization.png)
