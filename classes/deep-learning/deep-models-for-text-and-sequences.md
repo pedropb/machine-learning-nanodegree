@@ -128,3 +128,10 @@ This same concept can be drawn in a diagram like below. `X`, `Y` and `M` are all
 As we have seen before, we now have a memory diagram where we can read, write and forget some data. Instead of using binary functions for these operations, if we can use continuous functions that output some value between 0 and 1, indicating how much we should write, read or forget, then it becomes very interesting for the math. With a continuous function, like a sigmoid, we can compute the derivative of this sigma factor and backpropagate through it. This is exactly what a LSTM cell is.
 
 ![LSTM Cell](images/rnns/lstm-cell.png)
+
+In a detailed view, LSTM cell introduces 3 new hyperparameters, for each of the gates, and a `tanh` control function to stabilize the output. This is all well behaved and easily differentiable, allowing us compute the update steps of the SGD without any problems.
+
+![LSTM Cell Detailed](images/rnns/lstm-cell-detailed.png)
+
+The introduction of these 3 new gates is what allow our model to keep the memory longer when it needs to and ignore things when it should. As a result, the optimization is much easier and the gradient vanishing problem disappears.
+
