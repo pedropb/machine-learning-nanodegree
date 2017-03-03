@@ -119,6 +119,12 @@ To understand how LSTM works, we need to conceptualize what is a memory machine.
 
 ![Simple Memory](images/rnns/simple-memory.png)
 
-This same concept can be drawn in a diagram like below.
+This same concept can be drawn in a diagram like below. `X`, `Y` and `M` are all vectors/matrices.
 
 ![Memory Diagram](images/rnns/memory-diagram.png)
+
+## LSTM Cell
+
+As we have seen before, we now have a memory diagram where we can read, write and forget some data. Instead of using binary functions for these operations, if we can use continuous functions that output some value between 0 and 1, indicating how much we should write, read or forget, then it becomes very interesting for the math. With a continuous function, like a sigmoid, we can compute the derivative of this sigma factor and backpropagate through it. This is exactly what a LSTM cell is.
+
+![LSTM Cell](images/rnns/lstm-cell.png)
