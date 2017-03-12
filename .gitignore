@@ -2,3 +2,5 @@
 launch.json
 *.pyc
 .ipynb_checkpoints
+_site
+Gemfile.lock
