@@ -6,7 +6,7 @@ In text, usually words that occur with the least frequency are the most importan
 
 Another problem is that we can use different words that have the same meaning. This means that the model will have to learn about these semantic relations, which means that we'll need to feed lots of training data with labels to it.
 
-![Challenges](images/dmft/Challenges.png)
+![Challenges](images/dmft/challenges.png)
 
 A solution to these problems is to use Unsupervised Learning. This is a good solution because of two reasons:
 - There is lot of textual data available for our models to train upon
