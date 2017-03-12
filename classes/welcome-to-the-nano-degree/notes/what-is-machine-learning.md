@@ -21,15 +21,15 @@ Decision trees are a series of questions you ask at one's data to come to a deci
 
 ## Decision tree
 
-![Decision Tree](http://g.gravizo.com/g?
+<img src='http://g.gravizo.com/g?
   digraph G {
     "Ask age";
-    "Ask age" -> "suggest Pokemon Go" [label="<20"];
-    "Ask age" -> "Ask gender" [label=">=20"];
-    "Ask gender" -> "suggest WhatsApp" [label="F"];
-    "Ask gender" -> "suggest Snapchat" [label="M"];
+    "Ask age" -> "suggest Pokemon Go" %5Blabel="<20"%5D;
+    "Ask age" -> "Ask gender" %5Blabel=">=20"%5D;
+    "Ask gender" -> "suggest WhatsApp" %5Blabel="F"%5D;
+    "Ask gender" -> "suggest Snapchat" %5Blabel="M"%5D;
   }
-)
+'/>
 
 # Naive Bayes
 
