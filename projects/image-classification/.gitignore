@@ -1,0 +1,6 @@
+*
+
+!*.html
+!.gitignore
+!*.py
+!*.ipynb
