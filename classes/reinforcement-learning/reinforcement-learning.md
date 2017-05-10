@@ -38,4 +38,4 @@ Side Note: Reinforcement is a misused term, because all we care is to maximize r
 
 ## Summary
 
-![Summary](rl-summary.png)
+![Summary](images/rl-summary.png)
